@@ -1542,3 +1542,138 @@ body.lightbox-open {
     height: 42px;
   }
 }
+
+
+/* V3.6.0 - SEO local + footer premium + pages légales */
+
+.footer-premium {
+  background:
+    radial-gradient(circle at top left, rgba(255, 191, 69, .10), transparent 32%),
+    #030303;
+  border-top: 1px solid rgba(255, 191, 69, .18);
+  color: #b9aa91;
+  padding: 54px 20px 95px;
+}
+
+.footer-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.4fr .8fr .8fr 1fr;
+  gap: 26px;
+  text-align: left;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.footer-col h3 {
+  color: #ffc14a;
+  margin-bottom: 8px;
+}
+
+.footer-col a {
+  color: #eadfce;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #ffc14a;
+}
+
+.footer-main p {
+  max-width: 360px;
+}
+
+.footer-slogan {
+  color: #fff4d8;
+  font-weight: 900;
+}
+
+.footer-bottom {
+  max-width: 1180px;
+  margin: 34px auto 0;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 191, 69, .14);
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: #a9967d;
+  font-size: .92rem;
+}
+
+.footer-bottom a {
+  color: #eadfce;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #ffc14a;
+}
+
+.legal-page {
+  min-height: 100vh;
+  padding: 36px 18px 80px;
+  background:
+    radial-gradient(circle at top, rgba(255, 191, 69, .15), transparent 34%),
+    linear-gradient(145deg, #050505, #111 60%, #1b1003);
+}
+
+.legal-back {
+  max-width: 920px;
+  margin: 0 auto 22px;
+  display: block;
+  color: #ffc14a;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+.legal-card {
+  max-width: 920px;
+  margin: 0 auto;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.075), rgba(255,255,255,.025)),
+    rgba(10,10,10,.72);
+  border: 1px solid rgba(255, 191, 69, .20);
+  border-radius: 30px;
+  padding: 34px;
+  color: #eadfce;
+  box-shadow: 0 30px 90px rgba(0,0,0,.36);
+}
+
+.legal-card h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  margin-bottom: 26px;
+}
+
+.legal-card h2 {
+  color: #ffc14a;
+  margin: 26px 0 10px;
+  font-size: 1.25rem;
+}
+
+.legal-card p {
+  margin: 8px 0;
+}
+
+.legal-card a {
+  color: #ffc14a;
+}
+
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+  }
+
+  .legal-card {
+    padding: 24px 18px;
+  }
+}

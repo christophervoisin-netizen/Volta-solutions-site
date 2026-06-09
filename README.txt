@@ -1,20 +1,19 @@
-VoltaSite V3.5.1 - Méthode Premium
+VoltaSite V3.6.0 - SEO Local + Footer Premium + Mentions Legales
 
-Modifications :
-- Suppression des compteurs numériques animés.
-- Remplacement par un bloc plus élégant :
-  * Artisan local
-  * Travail soigné
-  * Solutions modernes
-  * Installation durable
-- Ajout d’une vraie timeline "Votre projet en 5 étapes".
-- Avis clients premium conservés.
-- Galerie plein écran conservée.
-- Photos personnelles conservées.
+Nouveautés :
+- Optimisation SEO local dans le head.
+- Données structurées LocalBusiness / Electrician.
+- Footer premium complet.
+- Page mentions-legales.html.
+- Page politique-confidentialite.html.
+- Coordonnées actuelles intégrées.
+- Emplacement prévu pour les informations administratives futures : SIRET, TVA, assurance, etc.
 
 Fichiers à envoyer sur GitHub :
 - index.html
 - style.css
+- mentions-legales.html
+- politique-confidentialite.html
 - favicon.png
 - volta-logo.png
 - README.txt
