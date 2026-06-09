@@ -1,13 +1,18 @@
-VoltaSite V3.1 - Racine Simple
+VoltaSite V3.2 Premium Actions
 
-Version adaptée pour GitHub mobile :
-- Tous les fichiers sont à la racine.
-- Pas de dossier images à gérer.
+Version officielle :
+- Barre flottante : Appeler / Devis / Email
+- Bouton retour en haut animé
+- Zone d’intervention autour de Montagny-près-Louhans
+- Galerie de réalisations prête pour les vraies photos
+- Section Pourquoi choisir Volta Solutions ?
+- Effets premium sur logo, boutons et cartes
 
-À envoyer/remplacer sur GitHub :
+Fichiers à envoyer à la racine du dépôt GitHub :
 - index.html
 - style.css
 - volta-logo.png
 - favicon.png
+- README.txt
 
-Ensuite : Commit changes puis Cloudflare > New deployment / Retry build si besoin.
+Après le commit, Cloudflare doit déployer automatiquement.
