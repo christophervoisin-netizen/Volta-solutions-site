@@ -1,9 +1,13 @@
-VoltaSite V3.3.1 - Galerie Reelle Premium SANS dossier images
+VoltaSite V3.3.2 - Galerie Clean Premium
 
-Version spéciale téléphone :
-- Toutes les images sont à la racine.
-- Aucun dossier images à envoyer.
-- Tu peux sélectionner tous les fichiers et les envoyer directement sur GitHub.
+Correction :
+- Galerie moins fouillis.
+- Seulement 6 réalisations visibles au départ.
+- Bouton "Voir plus de réalisations" pour afficher le reste.
+- Cartes plus aérées.
+- Bloc Avant / Après plus propre.
+- Photo principale conservée.
+- Effets premium conservés.
 
 Fichiers à envoyer sur GitHub :
 - index.html
@@ -11,6 +15,6 @@ Fichiers à envoyer sur GitHub :
 - favicon.png
 - volta-logo.png
 - README.txt
-- toutes les images .jpg
+- toutes les images .jpg à la racine
 
 Après le commit, Cloudflare déploie automatiquement.

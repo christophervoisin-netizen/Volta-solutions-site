@@ -155,6 +155,7 @@
     </div>
   </div>
 
+  <h3 class="before-after-title">Avant / Après : rénovation d’un tableau électrique</h3>
   <div class="before-after">
     <div>
       <span>Avant</span>
@@ -228,7 +229,7 @@
         <p>Implantation propre sur support mural pour installation solaire.</p>
       </div>
     </a>
-    <a href="chantier-pv-exterieur.jpg" class="real-card" data-category="☀️ Photovoltaïque" target="_blank" rel="noopener">
+    <a href="chantier-pv-exterieur.jpg" class="real-card hidden-realisation" data-category="☀️ Photovoltaïque" target="_blank" rel="noopener">
       <div class="real-img-wrap">
         <img src="chantier-pv-exterieur.jpg" alt="Centrale photovoltaïque extérieure" loading="lazy" />
         <span class="real-tag">☀️ Photovoltaïque</span>
@@ -238,7 +239,7 @@
         <p>Coffrets, onduleurs et protections installés en extérieur.</p>
       </div>
     </a>
-    <a href="chantier-armoire-batteries.jpg" class="real-card" data-category="🔋 Stockage énergie" target="_blank" rel="noopener">
+    <a href="chantier-armoire-batteries.jpg" class="real-card hidden-realisation" data-category="🔋 Stockage énergie" target="_blank" rel="noopener">
       <div class="real-img-wrap">
         <img src="chantier-armoire-batteries.jpg" alt="Armoire de stockage énergie" loading="lazy" />
         <span class="real-tag">🔋 Stockage énergie</span>
@@ -248,7 +249,7 @@
         <p>Système de stockage grande capacité avec intégration technique.</p>
       </div>
     </a>
-    <a href="chantier-pv-batterie-residentiel.jpg" class="real-card" data-category="🔋 Stockage énergie" target="_blank" rel="noopener">
+    <a href="chantier-pv-batterie-residentiel.jpg" class="real-card hidden-realisation" data-category="🔋 Stockage énergie" target="_blank" rel="noopener">
       <div class="real-img-wrap">
         <img src="chantier-pv-batterie-residentiel.jpg" alt="Solution photovoltaïque avec batterie" loading="lazy" />
         <span class="real-tag">🔋 Stockage énergie</span>
@@ -258,7 +259,7 @@
         <p>Installation résidentielle avec onduleur, coffrets et batterie.</p>
       </div>
     </a>
-    <a href="chantier-pv-bois.jpg" class="real-card" data-category="☀️ Photovoltaïque" target="_blank" rel="noopener">
+    <a href="chantier-pv-bois.jpg" class="real-card hidden-realisation" data-category="☀️ Photovoltaïque" target="_blank" rel="noopener">
       <div class="real-img-wrap">
         <img src="chantier-pv-bois.jpg" alt="Local technique photovoltaïque" loading="lazy" />
         <span class="real-tag">☀️ Photovoltaïque</span>
@@ -268,7 +269,7 @@
         <p>Intégration propre dans un local bois avec stockage d&#x27;énergie.</p>
       </div>
     </a>
-    <a href="chantier-armoires-schneider.jpg" class="real-card" data-category="🏭 Installation pro" target="_blank" rel="noopener">
+    <a href="chantier-armoires-schneider.jpg" class="real-card hidden-realisation" data-category="🏭 Installation pro" target="_blank" rel="noopener">
       <div class="real-img-wrap">
         <img src="chantier-armoires-schneider.jpg" alt="Armoires électriques Schneider" loading="lazy" />
         <span class="real-tag">🏭 Installation pro</span>
@@ -278,7 +279,7 @@
         <p>Armoires électriques de puissance pour installation professionnelle.</p>
       </div>
     </a>
-    <a href="chantier-borne-schneider.jpg" class="real-card" data-category="🚗 Borne de recharge" target="_blank" rel="noopener">
+    <a href="chantier-borne-schneider.jpg" class="real-card hidden-realisation" data-category="🚗 Borne de recharge" target="_blank" rel="noopener">
       <div class="real-img-wrap">
         <img src="chantier-borne-schneider.jpg" alt="Borne de recharge Schneider" loading="lazy" />
         <span class="real-tag">🚗 Borne de recharge</span>
@@ -290,6 +291,7 @@
     </a>
   </div>
 
+  <button class="btn secondary gallery-btn show-more-btn" type="button">Voir plus de réalisations</button>
   <a href="#devis" class="btn secondary gallery-btn">Présenter mon projet</a>
 </section>
 
@@ -429,6 +431,16 @@
       lightningScroll.classList.remove('active');
     }, 1400);
   });
+
+  const showMoreBtn = document.querySelector('.show-more-btn');
+  const hiddenCards = document.querySelectorAll('.hidden-realisation');
+
+  if (showMoreBtn && hiddenCards.length) {
+    showMoreBtn.addEventListener('click', () => {
+      hiddenCards.forEach(card => card.classList.add('realisation-visible'));
+      showMoreBtn.style.display = 'none';
+    });
+  }
 </script>
 
 </body>
