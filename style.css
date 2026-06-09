@@ -1092,3 +1092,74 @@ body.lightbox-open {
     border-radius: 20px;
   }
 }
+
+
+/* V3.3.6 - Galerie propre avec réalisations personnelles */
+
+.gallery-subtitle {
+  max-width: 1040px;
+  margin: 44px auto 20px;
+  color: #ffc14a;
+  font-size: clamp(1.35rem, 3vw, 1.9rem);
+  text-align: left;
+}
+
+.gallery-note {
+  max-width: 720px;
+  margin: 24px auto 8px;
+  color: #d8c9b8;
+  text-align: center;
+}
+
+.before-after-clean {
+  align-items: stretch;
+}
+
+.before-after-clean a.before-after-item {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)),
+    #111;
+  border: 1px solid rgba(255, 191, 69, .18);
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 28px 80px rgba(0,0,0,.36);
+  position: relative;
+  cursor: zoom-in;
+}
+
+.before-after-clean a.before-after-item:hover {
+  border-color: rgba(255, 191, 69, .48);
+}
+
+.before-after-clean p {
+  padding: 16px 18px 18px;
+  color: #ded2c0;
+  text-align: left;
+  margin: 0;
+  font-weight: 700;
+}
+
+.real-grid-clean {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.featured-realisation {
+  max-width: 1040px;
+}
+
+.featured-image img {
+  object-position: center;
+}
+
+@media (max-width: 900px) {
+  .gallery-subtitle {
+    text-align: center;
+  }
+
+  .real-grid-clean {
+    grid-template-columns: 1fr;
+  }
+}
