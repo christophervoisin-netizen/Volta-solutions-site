@@ -247,22 +247,39 @@
   <a href="mailto:christophervoisin@outlook.com">✉️ Email</a>
 </div>
 
-<a href="#accueil" class="back-to-top" aria-label="Retour en haut">↑</a>
+<button class="back-to-top" aria-label="Retour en haut">⚡</button>
+<div class="lightning-scroll" aria-hidden="true">⚡</div>
 
 <script>
-
   if (window.location.hash) {
     history.replaceState(null, "", window.location.pathname + window.location.search);
     window.scrollTo(0, 0);
   }
 
   const topButton = document.querySelector('.back-to-top');
+  const lightningScroll = document.querySelector('.lightning-scroll');
+
   window.addEventListener('scroll', () => {
     if (window.scrollY > 500) {
       topButton.classList.add('visible');
     } else {
       topButton.classList.remove('visible');
     }
+  });
+
+  topButton.addEventListener('click', () => {
+    lightningScroll.classList.remove('active');
+    void lightningScroll.offsetWidth;
+    lightningScroll.classList.add('active');
+
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+
+    setTimeout(() => {
+      lightningScroll.classList.remove('active');
+    }, 1400);
   });
 </script>
 

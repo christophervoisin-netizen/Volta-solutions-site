@@ -475,6 +475,8 @@ footer {
 }
 
 .back-to-top {
+  border: none;
+  cursor: pointer;
   position: fixed;
   right: 16px;
   bottom: 78px;
@@ -487,6 +489,7 @@ footer {
   background: linear-gradient(135deg, #ffd45c, #ff8d21);
   text-decoration: none;
   font-weight: 900;
+  font-size: 1.25rem;
   opacity: 0;
   transform: translateY(12px);
   pointer-events: none;
@@ -499,6 +502,60 @@ footer {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
+}
+
+
+.lightning-scroll {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 80;
+  transform: translate(-50%, -50%) scale(0.4);
+  font-size: clamp(4rem, 18vw, 8rem);
+  color: #ffd45c;
+  text-shadow:
+    0 0 18px rgba(255, 212, 92, .85),
+    0 0 42px rgba(255, 141, 33, .65),
+    0 0 85px rgba(255, 141, 33, .35);
+  opacity: 0;
+  pointer-events: none;
+  filter: drop-shadow(0 0 18px rgba(255, 191, 69, .75));
+}
+
+.lightning-scroll.active {
+  animation: voltaLightning 1.35s ease-in-out forwards;
+}
+
+@keyframes voltaLightning {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 35vh) scale(0.45) rotate(-8deg);
+  }
+  18% {
+    opacity: 1;
+    transform: translate(-50%, 18vh) scale(0.78) rotate(5deg);
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-50%, -5vh) scale(1) rotate(-4deg);
+  }
+  72% {
+    opacity: .85;
+    transform: translate(-50%, -26vh) scale(0.92) rotate(4deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -45vh) scale(0.55) rotate(0deg);
+  }
+}
+
+.lightning-scroll::after {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(255, 191, 69, .30), transparent 62%);
+  z-index: -1;
 }
 
 @media (max-width: 900px) {
