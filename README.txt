@@ -1,9 +1,11 @@
-VoltaSite V3.2.3 - Eclair Ameliore
+VoltaSite V3.2.4 - Logo Corrige
 
-Corrections :
-- Le bouton retour en haut redevient une flèche ↑.
-- L’éclair animé au milieu de l’écran est plus visible, plus net et plus premium.
-- Remontée fluide conservée.
+Correction :
+- Nouveau logo PNG propre.
+- Défaut visuel sur le A supprimé.
+- Favicon nettoyé.
+- Animation du logo conservée.
+- Effet remontée éclair conservé.
 
 Fichiers à remplacer sur GitHub :
 - index.html
