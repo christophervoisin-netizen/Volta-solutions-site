@@ -1921,3 +1921,131 @@ body.lightbox-open {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* V4.0 - Galerie premium avec filtres + animations */
+
+.gallery-filters {
+  max-width: 1040px;
+  margin: 0 auto 28px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  border: 1px solid rgba(255, 191, 69, .24);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025)),
+    rgba(8,8,8,.70);
+  color: #eadfce;
+  border-radius: 999px;
+  padding: 11px 15px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 14px 45px rgba(0,0,0,.22);
+  transition: transform .22s ease, border-color .22s ease, background .22s ease, color .22s ease;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 191, 69, .52);
+}
+
+.filter-btn.active {
+  color: #111;
+  background: linear-gradient(135deg, #ffd65c, #ff8b2b);
+  border-color: rgba(255, 191, 69, .75);
+  box-shadow: 0 0 28px rgba(255, 172, 45, .20);
+}
+
+.premium-filter-grid .real-card {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity .25s ease,
+    transform .25s ease,
+    filter .25s ease,
+    border-color .25s ease,
+    box-shadow .25s ease;
+}
+
+.premium-filter-grid .real-card.filtered-hidden {
+  opacity: 0;
+  transform: translateY(12px) scale(.96);
+  pointer-events: none;
+  display: none;
+}
+
+.premium-filter-grid .real-card.filter-pop {
+  animation: filterPop .38s ease both;
+}
+
+@keyframes filterPop {
+  0% {
+    opacity: .25;
+    transform: translateY(14px) scale(.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.real-card,
+.before-after-item,
+.card,
+.review,
+.why-card,
+.method-card {
+  will-change: transform;
+}
+
+.real-card:hover,
+.before-after-item:hover {
+  transform: translateY(-7px);
+  box-shadow:
+    0 34px 90px rgba(0,0,0,.42),
+    0 0 42px rgba(255, 170, 45, .13);
+}
+
+.real-card:hover .real-tag {
+  background: linear-gradient(135deg, rgba(255, 214, 92, .92), rgba(255, 139, 43, .86));
+  color: #111;
+}
+
+.real-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255,255,255,.08), transparent 38%, rgba(255,191,69,.08));
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+
+.real-card:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 620px) {
+  .gallery-filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 6px;
+    scrollbar-width: none;
+  }
+
+  .gallery-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .filter-btn {
+    white-space: nowrap;
+    font-size: .82rem;
+    padding: 10px 13px;
+  }
+}

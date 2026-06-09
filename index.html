@@ -91,6 +91,35 @@
     });
   }
 
+
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const filterCards = document.querySelectorAll('.premium-filter-grid .real-card');
+
+  if (filterButtons.length && filterCards.length) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        filterCards.forEach((card, index) => {
+          const category = card.dataset.category;
+          const shouldShow = filter === 'all' || category === filter;
+
+          if (shouldShow) {
+            card.classList.remove('filtered-hidden');
+            card.style.animationDelay = `${Math.min(index * 45, 220)}ms`;
+            card.classList.add('filter-pop');
+            setTimeout(() => card.classList.remove('filter-pop'), 420);
+          } else {
+            card.classList.add('filtered-hidden');
+          }
+        });
+      });
+    });
+  }
+
 </script>
 
   <link rel="icon" type="image/png" href="favicon.png" />
@@ -349,12 +378,12 @@
 
   <h3 class="before-after-title">Avant / Après : rénovation d’un tableau électrique</h3>
   <div class="before-after before-after-clean">
-    <a href="realisation-tableau-avant.jpg" class="before-after-item lightbox-trigger" data-full="realisation-tableau-avant.jpg" data-title="Avant rénovation tableau électrique">
+    <a href="realisation-tableau-avant.jpg" class="before-after-item lightbox-trigger" data-category="electricite" data-full="realisation-tableau-avant.jpg" data-title="Avant rénovation tableau électrique">
       <span>Avant</span>
       <img src="realisation-tableau-avant.jpg" alt="Ancien tableau électrique avant rénovation" loading="lazy" />
       <p>Ancienne installation avant modernisation.</p>
     </a>
-    <a href="realisation-tableau-apres.jpg" class="before-after-item lightbox-trigger" data-full="realisation-tableau-apres.jpg" data-title="Après rénovation tableau électrique">
+    <a href="realisation-tableau-apres.jpg" class="before-after-item lightbox-trigger" data-category="electricite" data-full="realisation-tableau-apres.jpg" data-title="Après rénovation tableau électrique">
       <span>Après</span>
       <img src="realisation-tableau-apres.jpg" alt="Tableau électrique après rénovation" loading="lazy" />
       <p>Tableau électrique modernisé, plus propre et plus lisible.</p>
@@ -362,9 +391,18 @@
   </div>
 
   <h3 class="gallery-subtitle">Galerie des autres réalisations</h3>
-  <div class="real-grid real-grid-clean">
+
+  <div class="gallery-filters" aria-label="Filtres des réalisations">
+    <button type="button" class="filter-btn active" data-filter="all">⚡ Tout</button>
+    <button type="button" class="filter-btn" data-filter="electricite">🔌 Électricité</button>
+    <button type="button" class="filter-btn" data-filter="photovoltaique">☀️ Photovoltaïque</button>
+    <button type="button" class="filter-btn" data-filter="stockage">🔋 Stockage</button>
+    <button type="button" class="filter-btn" data-filter="borne">🚗 Borne</button>
+  </div>
+
+  <div class="real-grid real-grid-clean premium-filter-grid">
     
-    <a href="realisation-borne-schneider.jpg" class="real-card lightbox-trigger" data-full="realisation-borne-schneider.jpg" data-title="Borne de recharge Schneider">
+    <a href="realisation-borne-schneider.jpg" class="real-card lightbox-trigger" data-category="borne" data-full="realisation-borne-schneider.jpg" data-title="Borne de recharge Schneider">
       <div class="real-img-wrap">
         <img src="realisation-borne-schneider.jpg" alt="Borne de recharge Schneider" loading="lazy" />
         <span class="real-tag">🔌 Borne de recharge</span>
@@ -374,7 +412,7 @@
         <p>Installation d’une borne de recharge résidentielle avec intégration propre et sécurisée.</p>
       </div>
     </a>
-    <a href="realisation-stockage-deye.jpg" class="real-card lightbox-trigger" data-full="realisation-stockage-deye.jpg" data-title="Stockage d’énergie domestique">
+    <a href="realisation-stockage-deye.jpg" class="real-card lightbox-trigger" data-category="stockage" data-full="realisation-stockage-deye.jpg" data-title="Stockage d’énergie domestique">
       <div class="real-img-wrap">
         <img src="realisation-stockage-deye.jpg" alt="Stockage d’énergie domestique" loading="lazy" />
         <span class="real-tag">🔋 Stockage énergie</span>
@@ -384,7 +422,7 @@
         <p>Installation avec batterie de stockage, coffrets de protection et intégration soignée.</p>
       </div>
     </a>
-    <a href="realisation-local-batterie.jpg" class="real-card lightbox-trigger" data-full="realisation-local-batterie.jpg" data-title="Installation complète en local technique">
+    <a href="realisation-local-batterie.jpg" class="real-card lightbox-trigger" data-category="stockage" data-full="realisation-local-batterie.jpg" data-title="Installation complète en local technique">
       <div class="real-img-wrap">
         <img src="realisation-local-batterie.jpg" alt="Installation complète en local technique" loading="lazy" />
         <span class="real-tag">🔋 Installation complète</span>
@@ -394,7 +432,7 @@
         <p>Vue d’ensemble d’une installation avec onduleur, coffrets et stockage d’énergie.</p>
       </div>
     </a>
-    <a href="realisation-pergola-dessous.jpg" class="real-card lightbox-trigger" data-full="realisation-pergola-dessous.jpg" data-title="Pergola photovoltaïque">
+    <a href="realisation-pergola-dessous.jpg" class="real-card lightbox-trigger" data-category="photovoltaique" data-full="realisation-pergola-dessous.jpg" data-title="Pergola photovoltaïque">
       <div class="real-img-wrap">
         <img src="realisation-pergola-dessous.jpg" alt="Pergola photovoltaïque" loading="lazy" />
         <span class="real-tag">☀️ Pergola solaire</span>
@@ -404,7 +442,7 @@
         <p>Vue sous les panneaux solaires installés sur la pergola.</p>
       </div>
     </a>
-    <a href="realisation-pergola-exterieur.jpg" class="real-card lightbox-trigger" data-full="realisation-pergola-exterieur.jpg" data-title="Pergola photovoltaïque extérieure">
+    <a href="realisation-pergola-exterieur.jpg" class="real-card lightbox-trigger" data-category="photovoltaique" data-full="realisation-pergola-exterieur.jpg" data-title="Pergola photovoltaïque extérieure">
       <div class="real-img-wrap">
         <img src="realisation-pergola-exterieur.jpg" alt="Pergola photovoltaïque extérieure" loading="lazy" />
         <span class="real-tag">☀️ Photovoltaïque</span>
@@ -414,7 +452,7 @@
         <p>Vue extérieure de la pergola solaire avec intégration propre à l’habitation.</p>
       </div>
     </a>
-    <a href="realisation-tableau-apres.jpg" class="real-card lightbox-trigger" data-full="realisation-tableau-apres.jpg" data-title="Après rénovation tableau électrique">
+    <a href="realisation-tableau-apres.jpg" class="real-card lightbox-trigger" data-category="electricite" data-full="realisation-tableau-apres.jpg" data-title="Après rénovation tableau électrique">
       <div class="real-img-wrap">
         <img src="realisation-tableau-apres.jpg" alt="Après rénovation tableau électrique" loading="lazy" />
         <span class="real-tag">⚡ Après rénovation</span>
@@ -768,6 +806,35 @@
 
       const mailto = `mailto:christophervoisin@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
       window.location.href = mailto;
+    });
+  }
+
+
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const filterCards = document.querySelectorAll('.premium-filter-grid .real-card');
+
+  if (filterButtons.length && filterCards.length) {
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        filterCards.forEach((card, index) => {
+          const category = card.dataset.category;
+          const shouldShow = filter === 'all' || category === filter;
+
+          if (shouldShow) {
+            card.classList.remove('filtered-hidden');
+            card.style.animationDelay = `${Math.min(index * 45, 220)}ms`;
+            card.classList.add('filter-pop');
+            setTimeout(() => card.classList.remove('filter-pop'), 420);
+          } else {
+            card.classList.add('filtered-hidden');
+          }
+        });
+      });
     });
   }
 

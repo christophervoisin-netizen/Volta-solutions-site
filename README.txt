@@ -1,16 +1,24 @@
-VoltaSite V3.8.0 - Formulaire de devis intelligent
+VoltaSite V4.0 - Galerie Premium + Filtres
 
 Nouveautés :
-- Remplacement du bloc devis par un vrai formulaire premium.
-- Choix du type de projet :
-  Dépannage, rénovation, tableau électrique, photovoltaïque, batterie, borne de recharge, domotique, autre.
-- Champs : nom, téléphone, email, ville, message.
-- Bouton : "Envoyer ma demande de devis".
-- Génération automatique d’un email prérempli vers christophervoisin@outlook.com.
-- Note pour joindre des photos depuis l’application email.
-- Contact direct téléphone + email conservé.
-- SEO local V3.7.1 conservé.
-- Footer premium, pages légales, galerie, avis et méthode conservés.
+- Filtres dans la galerie :
+  Tout, Électricité, Photovoltaïque, Stockage, Borne.
+- Animation fluide au changement de filtre.
+- Effet premium sur les cartes de réalisation.
+- Halo et zoom au survol.
+- Compatible mobile avec filtres horizontaux.
+- Galerie plein écran conservée.
+- Formulaire de devis V3.8 conservé.
+- SEO local, footer premium, mentions légales et politique de confidentialité conservés.
 
-Important :
-Le formulaire ouvre l’application email du client. Il ne stocke aucune donnée sur le site.
+Fichiers à envoyer sur GitHub :
+- index.html
+- style.css
+- robots.txt
+- sitemap.xml
+- mentions-legales.html
+- politique-confidentialite.html
+- favicon.png
+- volta-logo.png
+- README.txt
+- toutes les images .jpg
