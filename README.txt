@@ -1,13 +1,10 @@
-VoltaSite V3.3.2 - Galerie Clean Premium
+VoltaSite V3.3.4 - Logo transparent réel
 
-Correction :
-- Galerie moins fouillis.
-- Seulement 6 réalisations visibles au départ.
-- Bouton "Voir plus de réalisations" pour afficher le reste.
-- Cartes plus aérées.
-- Bloc Avant / Après plus propre.
-- Photo principale conservée.
-- Effets premium conservés.
+Correction réelle :
+- Le fichier volta-logo.png a été retravaillé.
+- Le fond noir du logo a été rendu transparent.
+- Le favicon a aussi été nettoyé.
+- Le reste du site est conservé comme en V3.3.2.
 
 Fichiers à envoyer sur GitHub :
 - index.html
@@ -15,6 +12,4 @@ Fichiers à envoyer sur GitHub :
 - favicon.png
 - volta-logo.png
 - README.txt
-- toutes les images .jpg à la racine
-
-Après le commit, Cloudflare déploie automatiquement.
+- toutes les images .jpg
