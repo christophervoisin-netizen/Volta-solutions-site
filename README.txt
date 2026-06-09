@@ -1,12 +1,16 @@
-VoltaSite V3.5.0 - Avis Waouh + Notre Méthode + Compteurs
+VoltaSite V3.5.1 - Méthode Premium
 
-Nouveautés :
-- Avis clients plus premium avec bloc de confiance.
-- Section "Notre méthode" ajoutée.
-- Compteurs animés ajoutés.
-- Parcours client V3.4.0 conservé.
+Modifications :
+- Suppression des compteurs numériques animés.
+- Remplacement par un bloc plus élégant :
+  * Artisan local
+  * Travail soigné
+  * Solutions modernes
+  * Installation durable
+- Ajout d’une vraie timeline "Votre projet en 5 étapes".
+- Avis clients premium conservés.
 - Galerie plein écran conservée.
-- Photos propres et personnelles conservées.
+- Photos personnelles conservées.
 
 Fichiers à envoyer sur GitHub :
 - index.html
