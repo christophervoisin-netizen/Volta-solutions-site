@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://volta-solutions-site.christophervoisin.workers.dev/sitemap.xml

@@ -1677,3 +1677,45 @@ body.lightbox-open {
     padding: 24px 18px;
   }
 }
+
+
+/* V3.7.0 - SEO local */
+
+.seo-local {
+  max-width: none;
+  background:
+    radial-gradient(circle at top left, rgba(255, 191, 69, .10), transparent 34%),
+    linear-gradient(180deg, #070707, #0d0d0d);
+}
+
+.seo-grid {
+  max-width: 1000px;
+  margin: 36px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.seo-grid div {
+  padding: 16px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 191, 69, .18);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025)),
+    rgba(10, 10, 10, .58);
+  color: #eadfce;
+  font-weight: 800;
+  box-shadow: 0 18px 55px rgba(0,0,0,.22);
+}
+
+@media (max-width: 900px) {
+  .seo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .seo-grid {
+    grid-template-columns: 1fr;
+  }
+}
