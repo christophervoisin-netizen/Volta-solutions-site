@@ -1,105 +1,122 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volta Solutions</title>
-
-<style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#111;
-    color:white;
-    text-align:center;
-}
-
-header{
-    padding:60px 20px;
-    background:linear-gradient(135deg,#111,#1f3b5b);
-}
-
-h1{
-    font-size:3em;
-    color:#f5c542;
-}
-
-h2{
-    color:#4fc3f7;
-}
-
-section{
-    padding:40px 20px;
-}
-
-.bouton{
-    display:inline-block;
-    padding:15px 30px;
-    background:#f5c542;
-    color:black;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:10px;
-    margin-top:20px;
-}
-
-.services{
-    max-width:700px;
-    margin:auto;
-    text-align:left;
-    font-size:1.2em;
-}
-
-footer{
-    padding:20px;
-    background:#000;
-}
-</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volta Solutions | Électricité, Photovoltaïque & Domotique</title>
+  <meta name="description" content="Volta Solutions, électricité générale, photovoltaïque, domotique, dépannage, automatisme et solutions intelligentes en Saône-et-Loire et alentours.">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
+<header class="hero">
+  <nav class="navbar">
+    <div class="logo">⚡ Volta Solutions</div>
+    <a href="#devis" class="nav-button">Demander un devis</a>
+  </nav>
 
-<h1>⚡ VOLTA SOLUTIONS ⚡</h1>
+  <div class="hero-content">
+    <p class="badge">Électricité • Solaire • Solutions intelligentes</p>
+    <h1>Votre artisan électricien moderne et polyvalent</h1>
+    <p class="intro">
+      Volta Solutions vous accompagne pour vos installations électriques, rénovations,
+      dépannages, projets photovoltaïques, domotique et automatisme.
+    </p>
 
-<h2>
-Électricité générale • Photovoltaïque • Domotique
-</h2>
-
-<a href="#" class="bouton">
-Demander un devis gratuit
-</a>
-
+    <div class="hero-buttons">
+      <a href="#devis" class="btn primary">Demander un devis gratuit</a>
+      <a href="#services" class="btn secondary">Voir les services</a>
+    </div>
+  </div>
 </header>
 
-<section>
+<main>
 
-<h2>Nos services</h2>
+<section id="services" class="section">
+  <h2>Nos services</h2>
+  <p class="section-text">Des prestations propres, sérieuses et adaptées à votre projet.</p>
 
-<div class="services">
+  <div class="cards">
+    <div class="card">
+      <span>⚡</span>
+      <h3>Électricité générale</h3>
+      <p>Installation, rénovation, mise en sécurité, tableaux électriques et appareillage.</p>
+    </div>
 
-<p>🔧 Dépannage électrique</p>
+    <div class="card">
+      <span>☀️</span>
+      <h3>Photovoltaïque</h3>
+      <p>Accompagnement, installation, maintenance et optimisation de vos solutions solaires.</p>
+    </div>
 
-<p>🏠 Installation et rénovation</p>
+    <div class="card">
+      <span>🏡</span>
+      <h3>Domotique</h3>
+      <p>Maison connectée, éclairage intelligent, automatismes et confort au quotidien.</p>
+    </div>
 
-<p>☀️ Photovoltaïque</p>
+    <div class="card">
+      <span>🔧</span>
+      <h3>Dépannage</h3>
+      <p>Recherche de panne, remplacement de matériel, intervention propre et efficace.</p>
+    </div>
 
-<p>🏡 Domotique</p>
+    <div class="card">
+      <span>🚗</span>
+      <h3>IRVE</h3>
+      <p>Préparation à l’installation de bornes de recharge pour véhicules électriques.</p>
+    </div>
 
-<p>🚗 Bornes de recharge IRVE</p>
-
-<p>⚙️ Automatisme</p>
-
-</div>
-
+    <div class="card">
+      <span>⚙️</span>
+      <h3>Automatisme</h3>
+      <p>Portails, commandes, protections, automatismes et solutions sur mesure.</p>
+    </div>
+  </div>
 </section>
 
+<section class="section dark">
+  <h2>Réalisations</h2>
+  <p class="section-text">
+    Bientôt ici : photos de chantiers, tableaux électriques, installations photovoltaïques et projets domotiques.
+  </p>
+
+  <div class="photo-placeholder">
+    📸 Galerie photos à venir
+  </div>
+</section>
+
+<section class="section">
+  <h2>Avis clients</h2>
+
+  <div class="reviews">
+    <div class="review">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>“Travail propre, sérieux et professionnel.”</p>
+    </div>
+
+    <div class="review">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>“Très bon contact, explications claires et chantier soigné.”</p>
+    </div>
+  </div>
+</section>
+
+<section id="devis" class="section devis">
+  <h2>Demander un devis</h2>
+  <p>
+    Vous avez un projet électrique, solaire ou domotique ?
+    Contactez Volta Solutions pour en discuter.
+  </p>
+
+  <a href="mailto:contact@volta-solutions.fr" class="btn primary">Envoyer une demande</a>
+</section>
+
+</main>
+
 <footer>
-
-© 2026 Volta Solutions
-
+  <p>© 2026 Volta Solutions — Électricité générale • Photovoltaïque • Domotique</p>
 </footer>
 
 </body>
