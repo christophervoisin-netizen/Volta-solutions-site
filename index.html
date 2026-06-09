@@ -147,6 +147,67 @@
   </div>
 </section>
 
+
+<section id="methode" class="section method-section">
+  <p class="section-kicker">Notre méthode</p>
+  <h2>Un projet clair, du premier contact à la mise en service</h2>
+  <p class="section-text">
+    Volta Solutions vous accompagne avec une approche simple, transparente et adaptée à votre besoin.
+  </p>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <span class="stat-number" data-target="1">0</span>
+      <p>Interlocuteur unique</p>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number" data-target="5">0</span>
+      <p>Étapes simples</p>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number" data-target="50">0</span>
+      <p>Km autour de Montagny</p>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number" data-target="100">0</span>
+      <p>% travail soigné</p>
+    </div>
+  </div>
+
+  <div class="method-grid">
+    <article class="method-card">
+      <span>1</span>
+      <h3>Prise de contact</h3>
+      <p>Vous expliquez votre besoin : dépannage, rénovation, photovoltaïque, borne ou domotique.</p>
+    </article>
+
+    <article class="method-card">
+      <span>2</span>
+      <h3>Échange et conseils</h3>
+      <p>Votre projet est étudié avec des explications claires et des solutions adaptées.</p>
+    </article>
+
+    <article class="method-card">
+      <span>3</span>
+      <h3>Devis gratuit</h3>
+      <p>Un devis simple, lisible et cohérent avec les travaux à réaliser.</p>
+    </article>
+
+    <article class="method-card">
+      <span>4</span>
+      <h3>Réalisation soignée</h3>
+      <p>Une intervention propre, organisée et pensée pour durer dans le temps.</p>
+    </article>
+
+    <article class="method-card">
+      <span>5</span>
+      <h3>Mise en service & suivi</h3>
+      <p>Contrôle, explications et disponibilité après l’intervention si besoin.</p>
+    </article>
+  </div>
+</section>
+
+
 <section id="zone" class="section zone-section">
   <p class="section-kicker">Zone d’intervention</p>
   <h2>Basé à Montagny-près-Louhans</h2>
@@ -287,12 +348,19 @@
 </section>
 
 
-<section id="avis" class="section reviews">
+
+<section id="avis" class="section reviews reviews-wow">
   <p class="section-kicker">Avis clients</p>
   <h2>Ils nous font confiance</h2>
   <p class="section-text">
     Des retours simples et rassurants autour du sérieux, de la propreté du travail et des explications données.
   </p>
+
+  <div class="review-score">
+    <div class="score-stars">★★★★★</div>
+    <strong>Votre satisfaction est notre priorité</strong>
+    <p>Un travail propre, des explications claires et un accompagnement sérieux à chaque étape.</p>
+  </div>
 
   <div class="review-grid review-grid-premium">
     <article class="review">
@@ -302,7 +370,7 @@
       <strong>Client satisfait</strong>
     </article>
 
-    <article class="review">
+    <article class="review featured-review">
       <p class="stars">★★★★★</p>
       <h3>Explications claires</h3>
       <p>“Très bon contact, conseils utiles et explications faciles à comprendre.”</p>
@@ -322,6 +390,7 @@
     <p>Les avis Google seront ajoutés dès l’ouverture officielle de Volta Solutions.</p>
   </div>
 </section>
+
 
 
 <section id="devis" class="section devis">
@@ -463,6 +532,45 @@
     if (event.key === 'ArrowLeft') moveLightbox(-1);
     if (event.key === 'ArrowRight') moveLightbox(1);
   });
+
+
+  const statNumbers = document.querySelectorAll('.stat-number');
+  let statsStarted = false;
+
+  function animateStats() {
+    if (statsStarted || !statNumbers.length) return;
+
+    const statsSection = document.querySelector('.stats-row');
+    if (!statsSection) return;
+
+    const rect = statsSection.getBoundingClientRect();
+    if (rect.top > window.innerHeight - 80) return;
+
+    statsStarted = true;
+
+    statNumbers.forEach(number => {
+      const target = Number(number.dataset.target || 0);
+      const duration = 1200;
+      const start = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        number.textContent = Math.round(target * eased);
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          number.textContent = target;
+        }
+      }
+
+      requestAnimationFrame(update);
+    });
+  }
+
+  window.addEventListener('scroll', animateStats);
+  window.addEventListener('load', animateStats);
 
 </script>
 
