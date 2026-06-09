@@ -1,23 +1,16 @@
-VoltaSite V3.7.1 - SEO Local Zone Fusionnée
+VoltaSite V3.8.0 - Formulaire de devis intelligent
 
-Modifications :
-- Suppression de la section SEO locale séparée pour éviter le doublon visuel.
-- SEO local intégré directement dans la zone d’intervention existante.
-- Texte optimisé : Louhans, Saône-et-Loire, secteurs proches du Jura.
-- Liste de villes plus compacte : Louhans, Bletterans, Lons-le-Saunier, Saint-Amour / Cuiseaux.
-- robots.txt conservé.
-- sitemap.xml conservé.
-- Footer premium et pages légales conservés.
-- Galerie, avis, méthode premium et animations conservés.
+Nouveautés :
+- Remplacement du bloc devis par un vrai formulaire premium.
+- Choix du type de projet :
+  Dépannage, rénovation, tableau électrique, photovoltaïque, batterie, borne de recharge, domotique, autre.
+- Champs : nom, téléphone, email, ville, message.
+- Bouton : "Envoyer ma demande de devis".
+- Génération automatique d’un email prérempli vers christophervoisin@outlook.com.
+- Note pour joindre des photos depuis l’application email.
+- Contact direct téléphone + email conservé.
+- SEO local V3.7.1 conservé.
+- Footer premium, pages légales, galerie, avis et méthode conservés.
 
-Fichiers à envoyer sur GitHub :
-- index.html
-- style.css
-- robots.txt
-- sitemap.xml
-- mentions-legales.html
-- politique-confidentialite.html
-- favicon.png
-- volta-logo.png
-- README.txt
-- toutes les images .jpg
+Important :
+Le formulaire ouvre l’application email du client. Il ne stocke aucune donnée sur le site.

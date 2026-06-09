@@ -47,7 +47,51 @@
     ],
     "url": "https://volta-solutions-site.christophervoisin.workers.dev"
   }
-  </script>
+  
+  const quoteForm = document.getElementById('quoteForm');
+
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(quoteForm);
+      const projets = Array.from(quoteForm.querySelectorAll('input[name="projet"]:checked'))
+        .map(input => input.value);
+
+      const nom = formData.get('nom') || '';
+      const telephone = formData.get('telephone') || '';
+      const email = formData.get('email') || '';
+      const ville = formData.get('ville') || '';
+      const message = formData.get('message') || '';
+
+      const subject = `Demande de devis Volta Solutions - ${ville || nom || 'Nouveau projet'}`;
+
+      const body = [
+        'Bonjour Christopher,',
+        '',
+        'Je souhaite obtenir un devis pour mon projet.',
+        '',
+        'Type de projet :',
+        projets.length ? projets.map(p => `- ${p}`).join('\n') : '- Non précisé',
+        '',
+        'Coordonnées :',
+        `Nom : ${nom}`,
+        `Téléphone : ${telephone}`,
+        `Email : ${email}`,
+        `Ville : ${ville}`,
+        '',
+        'Description du projet :',
+        message || 'Non précisé',
+        '',
+        'Merci,'
+      ].join('\n');
+
+      const mailto = `mailto:christophervoisin@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  }
+
+</script>
 
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
@@ -438,18 +482,81 @@
 
 
 
-<section id="devis" class="section devis">
-  <p class="section-kicker">Votre projet</p>
-  <h2>Demandez votre devis gratuit</h2>
-  <p>
-    Un projet électrique, solaire ou domotique ? Contactez Volta Solutions pour en discuter.
+
+<section id="devis" class="section devis devis-smart">
+  <p class="section-kicker">Demande de devis</p>
+  <h2>Parlez-moi de votre projet</h2>
+  <p class="section-text">
+    Décrivez votre besoin en quelques secondes. Votre demande sera préparée automatiquement
+    dans votre application email pour un premier échange clair et rapide.
   </p>
 
-  <div class="devis-actions">
-    <a href="mailto:christophervoisin@outlook.com" class="btn primary">Envoyer un email</a>
-    <a href="tel:0620449387" class="btn secondary">Appeler maintenant</a>
+  <form id="quoteForm" class="quote-form">
+    <div class="form-block">
+      <h3>Votre projet</h3>
+      <div class="project-grid">
+        <label><input type="checkbox" name="projet" value="Dépannage électrique"> <span>⚡ Dépannage électrique</span></label>
+        <label><input type="checkbox" name="projet" value="Rénovation électrique"> <span>🏠 Rénovation électrique</span></label>
+        <label><input type="checkbox" name="projet" value="Tableau électrique"> <span>🔌 Tableau électrique</span></label>
+        <label><input type="checkbox" name="projet" value="Photovoltaïque"> <span>☀️ Photovoltaïque</span></label>
+        <label><input type="checkbox" name="projet" value="Batterie de stockage"> <span>🔋 Batterie de stockage</span></label>
+        <label><input type="checkbox" name="projet" value="Borne de recharge"> <span>🚗 Borne de recharge</span></label>
+        <label><input type="checkbox" name="projet" value="Domotique / automatisme"> <span>🏡 Domotique / automatisme</span></label>
+        <label><input type="checkbox" name="projet" value="Autre"> <span>✏️ Autre</span></label>
+      </div>
+    </div>
+
+    <div class="form-block">
+      <h3>Vos coordonnées</h3>
+      <div class="form-grid">
+        <label>
+          <span>Nom</span>
+          <input type="text" name="nom" placeholder="Votre nom" required>
+        </label>
+
+        <label>
+          <span>Téléphone</span>
+          <input type="tel" name="telephone" placeholder="Votre téléphone" required>
+        </label>
+
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" placeholder="Votre email">
+        </label>
+
+        <label>
+          <span>Ville</span>
+          <input type="text" name="ville" placeholder="Votre ville">
+        </label>
+      </div>
+    </div>
+
+    <div class="form-block">
+      <h3>Décrivez votre besoin</h3>
+      <label class="textarea-label">
+        <span>Message</span>
+        <textarea name="message" rows="6" placeholder="Exemple : remplacement d’un tableau électrique, panne à diagnostiquer, installation photovoltaïque, borne de recharge..."></textarea>
+      </label>
+
+      <div class="photo-note">
+        📷 Vous pourrez ajouter des photos en pièce jointe depuis votre application email après l’ouverture du message.
+      </div>
+    </div>
+
+    <button type="submit" class="btn primary quote-submit">⚡ Envoyer ma demande de devis</button>
+
+    <p class="quote-reassurance">Réponse rapide • Devis gratuit • Sans engagement</p>
+  </form>
+
+  <div class="direct-contact">
+    <p>Besoin d’un contact direct ?</p>
+    <div>
+      <a href="tel:0620449387" class="btn secondary">📞 Appeler</a>
+      <a href="mailto:christophervoisin@outlook.com" class="btn secondary">✉️ Email</a>
+    </div>
   </div>
 </section>
+
 
 </main>
 
@@ -619,6 +726,50 @@
     if (event.key === 'ArrowLeft') moveLightbox(-1);
     if (event.key === 'ArrowRight') moveLightbox(1);
   });
+
+
+  const quoteForm = document.getElementById('quoteForm');
+
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(quoteForm);
+      const projets = Array.from(quoteForm.querySelectorAll('input[name="projet"]:checked'))
+        .map(input => input.value);
+
+      const nom = formData.get('nom') || '';
+      const telephone = formData.get('telephone') || '';
+      const email = formData.get('email') || '';
+      const ville = formData.get('ville') || '';
+      const message = formData.get('message') || '';
+
+      const subject = `Demande de devis Volta Solutions - ${ville || nom || 'Nouveau projet'}`;
+
+      const body = [
+        'Bonjour Christopher,',
+        '',
+        'Je souhaite obtenir un devis pour mon projet.',
+        '',
+        'Type de projet :',
+        projets.length ? projets.map(p => `- ${p}`).join('\n') : '- Non précisé',
+        '',
+        'Coordonnées :',
+        `Nom : ${nom}`,
+        `Téléphone : ${telephone}`,
+        `Email : ${email}`,
+        `Ville : ${ville}`,
+        '',
+        'Description du projet :',
+        message || 'Non précisé',
+        '',
+        'Merci,'
+      ].join('\n');
+
+      const mailto = `mailto:christophervoisin@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  }
 
 </script>
 
