@@ -1,23 +1,21 @@
-VoltaSite_V2_1_Premium_Galerie.zip
+VoltaSite V2.2 Logo Premium
 
-Version à installer : OUI
+Version officielle à installer.
 
 Contenu :
 - index.html
 - style.css
-- dossier images/ prêt pour les futures photos
+- images/volta-logo.png
+- images/favicon.png
 
-Ajouts principaux :
-- Hero plus premium avec bloc logo
-- Navigation Services / Réalisations / Avis / Devis
-- Galerie de réalisations préparée
-- Avis clients améliorés
-- Bouton Appeler maintenant
-- Section zone d'intervention
-- Design noir/or plus lumineux
+Ajouts :
+- Logo Volta Solutions premium intégré dans le haut du site.
+- Favicon pour l’onglet du navigateur.
+- Bouton flottant “Devis gratuit” sur mobile.
+- Corrections CSS mineures.
 
 Installation :
-1. Remplacer index.html et style.css dans GitHub.
-2. Commit changes.
-3. Dans Cloudflare, cliquer sur Retry build si le site ne se met pas à jour.
-4. Actualiser le site avec ?fresh=21 si besoin.
+1. Remplacer index.html et style.css sur GitHub.
+2. Envoyer aussi le dossier images avec volta-logo.png et favicon.png.
+3. Commit changes.
+4. Dans Cloudflare, Retry build si le site ne change pas.
