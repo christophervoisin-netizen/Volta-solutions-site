@@ -1,63 +1,230 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#111;
-    color:white;
+html {
+  scroll-behavior: smooth;
 }
 
-header{
-    background:linear-gradient(135deg,#101010,#1c3553);
-    text-align:center;
-    padding:80px 20px;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0b0f14;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
-h1{
-    font-size:3rem;
-    color:#f5c542;
-    margin-bottom:20px;
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(5, 8, 13, 0.82), rgba(5, 8, 13, 0.95)),
+    linear-gradient(135deg, #0b0f14, #10243a, #0b0f14);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
-.slogan{
-    font-size:1.3rem;
-    color:#6dcff6;
-    margin-bottom:30px;
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1150px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.bouton{
-    display:inline-block;
-    padding:15px 30px;
-    background:#f5c542;
-    color:black;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
+.logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #f5c542;
 }
 
-section{
-    max-width:1000px;
-    margin:auto;
-    padding:60px 20px;
+.nav-button {
+  background: #f5c542;
+  color: #111;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
 }
 
-h2{
-    color:#f5c542;
-    margin-bottom:30px;
+.hero-content {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  padding: 80px 0;
 }
 
-.services{
-    display:grid;
-    gap:15px;
-    font-size:1.2rem;
+.badge {
+  display: inline-block;
+  color: #6ddcff;
+  border: 1px solid rgba(109, 220, 255, 0.35);
+  background: rgba(109, 220, 255, 0.08);
+  padding: 8px 16px;
+  border-radius: 999px;
+  margin-bottom: 25px;
+  font-weight: 700;
 }
 
-footer{
-    text-align:center;
-    padding:30px;
-    background:black;
-    color:#888;
+h1 {
+  font-size: clamp(2.3rem, 8vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 25px;
+  color: #ffffff;
+}
+
+.intro {
+  max-width: 760px;
+  margin: 0 auto 35px;
+  color: #c9d4df;
+  font-size: 1.15rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 22px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.primary {
+  background: #f5c542;
+  color: #111;
+}
+
+.secondary {
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #ffffff;
+}
+
+.section {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 75px 25px;
+  text-align: center;
+}
+
+.section h2 {
+  color: #f5c542;
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+
+.section-text {
+  color: #b7c3cf;
+  margin-bottom: 35px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: linear-gradient(180deg, #141b24, #0f141b);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px;
+  padding: 28px;
+  text-align: left;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.card span {
+  font-size: 2rem;
+}
+
+.card h3 {
+  color: #ffffff;
+  margin: 15px 0 10px;
+}
+
+.card p {
+  color: #b7c3cf;
+}
+
+.dark {
+  background: #080b10;
+  max-width: none;
+}
+
+.photo-placeholder {
+  max-width: 900px;
+  margin: 30px auto 0;
+  padding: 60px 20px;
+  border: 2px dashed rgba(109, 220, 255, 0.35);
+  border-radius: 24px;
+  color: #6ddcff;
+  font-size: 1.4rem;
+  background: rgba(109, 220, 255, 0.05);
+}
+
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.review {
+  background: #141b24;
+  border-radius: 22px;
+  padding: 25px;
+  color: #dce6f0;
+}
+
+.devis {
+  background: linear-gradient(135deg, #10243a, #0b0f14);
+  border-radius: 30px;
+  margin-bottom: 60px;
+}
+
+.devis p {
+  color: #c9d4df;
+  margin-bottom: 25px;
+}
+
+footer {
+  background: #05070a;
+  color: #8d99a6;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .nav-button {
+    font-size: 0.8rem;
+    padding: 9px 13px;
+  }
+
+  .cards,
+  .reviews {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-content {
+    padding: 70px 0;
+  }
+
+  .section {
+    padding: 55px 20px;
+  }
 }
