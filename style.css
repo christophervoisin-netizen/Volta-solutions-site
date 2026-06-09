@@ -1163,3 +1163,55 @@ body.lightbox-open {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* V3.4.0 - Parcours client + avis clients améliorés */
+
+.review-grid-premium .review h3 {
+  color: #ffc14a;
+  margin: 6px 0 10px;
+  font-size: 1.1rem;
+}
+
+.review-note {
+  max-width: 760px;
+  margin: 28px auto 0;
+  padding: 18px 20px;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 191, 69, .22);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+  color: #eadfce;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 18px 55px rgba(0,0,0,.22);
+}
+
+.review-note span {
+  font-size: 1.6rem;
+}
+
+.review-note p {
+  margin: 0;
+  font-weight: 700;
+}
+
+#pourquoi {
+  position: relative;
+}
+
+#pourquoi::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 0%, rgba(255, 180, 55, .08), transparent 42%);
+}
+
+@media (max-width: 700px) {
+  .review-note {
+    align-items: flex-start;
+    text-align: left;
+  }
+}

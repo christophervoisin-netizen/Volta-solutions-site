@@ -1,14 +1,18 @@
-VoltaSite V3.3.6 - Photos propres et personnelles
+VoltaSite V3.4.0 - Parcours client
 
 Modifications :
-- Suppression des anciennes photos liées à l’ancienne entreprise.
-- Galerie recentrée sur les réalisations personnelles.
-- Suppression des doublons Avant/Après dans la galerie.
-- Avant/Après conservé dans un bloc dédié.
-- Ajout de la pergola photovoltaïque extérieure comme photo principale.
-- Photo pergola extérieure recadrée pour masquer la voiture.
-- Borne de recharge légèrement recadrée pour anonymiser le lieu.
+- Réorganisation des sections dans un ordre plus logique pour convaincre un visiteur.
+- Nouvel ordre :
+  1. Accueil
+  2. Pourquoi choisir Volta Solutions
+  3. Nos services
+  4. Zone d’intervention
+  5. Réalisations
+  6. Avis clients
+  7. Demander un devis
+- Avis clients légèrement améliorés.
 - Galerie plein écran conservée.
+- Photos propres et personnelles conservées.
 - Logo transparent conservé.
 
 Fichiers à envoyer sur GitHub :
