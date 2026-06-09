@@ -169,7 +169,7 @@
 
   <div class="real-grid">
     
-    <a href="chantier-tableau-avant.jpg" class="real-card" data-category="⚡ Électricité générale" target="_blank" rel="noopener">
+    <a href="chantier-tableau-avant.jpg" class="real-card lightbox-trigger" data-full="chantier-tableau-avant.jpg" data-title="Avant rénovation tableau électrique" data-category="⚡ Électricité générale" >
       <div class="real-img-wrap">
         <img src="chantier-tableau-avant.jpg" alt="Avant rénovation tableau électrique" loading="lazy" />
         <span class="real-tag">⚡ Électricité générale</span>
@@ -179,7 +179,7 @@
         <p>Ancien tableau électrique avant remplacement.</p>
       </div>
     </a>
-    <a href="chantier-tableau-apres.jpg" class="real-card" data-category="⚡ Électricité générale" target="_blank" rel="noopener">
+    <a href="chantier-tableau-apres.jpg" class="real-card lightbox-trigger" data-full="chantier-tableau-apres.jpg" data-title="Après rénovation tableau électrique" data-category="⚡ Électricité générale" >
       <div class="real-img-wrap">
         <img src="chantier-tableau-apres.jpg" alt="Après rénovation tableau électrique" loading="lazy" />
         <span class="real-tag">⚡ Électricité générale</span>
@@ -189,7 +189,7 @@
         <p>Tableau électrique modernisé, plus propre et plus évolutif.</p>
       </div>
     </a>
-    <a href="chantier-pv-irve-principal.jpg" class="real-card" data-category="☀️ Photovoltaïque &amp; IRVE" target="_blank" rel="noopener">
+    <a href="chantier-pv-irve-principal.jpg" class="real-card lightbox-trigger" data-full="chantier-pv-irve-principal.jpg" data-title="Photovoltaïque + borne de recharge" data-category="☀️ Photovoltaïque &amp; IRVE" >
       <div class="real-img-wrap">
         <img src="chantier-pv-irve-principal.jpg" alt="Photovoltaïque + borne de recharge" loading="lazy" />
         <span class="real-tag">☀️ Photovoltaïque &amp; IRVE</span>
@@ -199,7 +199,7 @@
         <p>Installation complète avec coffrets, onduleur SolarEdge et borne de recharge.</p>
       </div>
     </a>
-    <a href="chantier-pv-batterie-interieur.jpg" class="real-card" data-category="🔋 Stockage énergie" target="_blank" rel="noopener">
+    <a href="chantier-pv-batterie-interieur.jpg" class="real-card lightbox-trigger" data-full="chantier-pv-batterie-interieur.jpg" data-title="Photovoltaïque avec stockage" data-category="🔋 Stockage énergie" >
       <div class="real-img-wrap">
         <img src="chantier-pv-batterie-interieur.jpg" alt="Photovoltaïque avec stockage" loading="lazy" />
         <span class="real-tag">🔋 Stockage énergie</span>
@@ -209,7 +209,7 @@
         <p>Onduleur, coffrets de protection et batterie de stockage domestique.</p>
       </div>
     </a>
-    <a href="chantier-pv-garage-large.jpg" class="real-card" data-category="☀️ Photovoltaïque" target="_blank" rel="noopener">
+    <a href="chantier-pv-garage-large.jpg" class="real-card lightbox-trigger" data-full="chantier-pv-garage-large.jpg" data-title="Installation photovoltaïque en garage" data-category="☀️ Photovoltaïque" >
       <div class="real-img-wrap">
         <img src="chantier-pv-garage-large.jpg" alt="Installation photovoltaïque en garage" loading="lazy" />
         <span class="real-tag">☀️ Photovoltaïque</span>
@@ -219,7 +219,7 @@
         <p>Intégration propre des coffrets, onduleurs et équipements de protection.</p>
       </div>
     </a>
-    <a href="chantier-pv-hangar.jpg" class="real-card" data-category="🏭 Installation pro" target="_blank" rel="noopener">
+    <a href="chantier-pv-hangar.jpg" class="real-card lightbox-trigger" data-full="chantier-pv-hangar.jpg" data-title="Installation photovoltaïque professionnelle" data-category="🏭 Installation pro" >
       <div class="real-img-wrap">
         <img src="chantier-pv-hangar.jpg" alt="Installation photovoltaïque professionnelle" loading="lazy" />
         <span class="real-tag">🏭 Installation pro</span>
@@ -391,6 +391,15 @@
   <p>© 2026 Volta Solutions — Électricité • Photovoltaïque • Domotique</p>
 </footer>
 
+
+<div class="lightbox" aria-hidden="true">
+  <button class="lightbox-close" aria-label="Fermer la galerie">×</button>
+  <button class="lightbox-nav lightbox-prev" aria-label="Photo précédente">‹</button>
+  <img src="" alt="" class="lightbox-img" />
+  <button class="lightbox-nav lightbox-next" aria-label="Photo suivante">›</button>
+  <div class="lightbox-caption"></div>
+</div>
+
 <div class="floating-actions" aria-label="Actions rapides">
   <a href="tel:0620449387">📞 Appeler</a>
   <a href="#devis">📝 Devis</a>
@@ -441,6 +450,65 @@
       showMoreBtn.style.display = 'none';
     });
   }
+
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImg = document.querySelector('.lightbox-img');
+  const lightboxCaption = document.querySelector('.lightbox-caption');
+  const lightboxClose = document.querySelector('.lightbox-close');
+  const lightboxPrev = document.querySelector('.lightbox-prev');
+  const lightboxNext = document.querySelector('.lightbox-next');
+  const lightboxTriggers = Array.from(document.querySelectorAll('.lightbox-trigger'));
+  let currentLightboxIndex = 0;
+
+  function openLightbox(index) {
+    currentLightboxIndex = index;
+    const item = lightboxTriggers[currentLightboxIndex];
+    lightboxImg.src = item.dataset.full;
+    lightboxImg.alt = item.dataset.title || 'Réalisation Volta Solutions';
+    lightboxCaption.textContent = item.dataset.title || '';
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('lightbox-open');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('lightbox-open');
+    setTimeout(() => {
+      if (!lightbox.classList.contains('active')) {
+        lightboxImg.src = '';
+      }
+    }, 200);
+  }
+
+  function moveLightbox(direction) {
+    currentLightboxIndex = (currentLightboxIndex + direction + lightboxTriggers.length) % lightboxTriggers.length;
+    openLightbox(currentLightboxIndex);
+  }
+
+  lightboxTriggers.forEach((item, index) => {
+    item.addEventListener('click', (event) => {
+      event.preventDefault();
+      openLightbox(index);
+    });
+  });
+
+  lightboxClose.addEventListener('click', closeLightbox);
+  lightboxPrev.addEventListener('click', () => moveLightbox(-1));
+  lightboxNext.addEventListener('click', () => moveLightbox(1));
+
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (!lightbox.classList.contains('active')) return;
+    if (event.key === 'Escape') closeLightbox();
+    if (event.key === 'ArrowLeft') moveLightbox(-1);
+    if (event.key === 'ArrowRight') moveLightbox(1);
+  });
+
 </script>
 
 </body>

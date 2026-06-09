@@ -1,10 +1,12 @@
-VoltaSite V3.3.4 - Logo transparent réel
+VoltaSite V3.3.5 - Galerie Plein Ecran
 
-Correction réelle :
-- Le fichier volta-logo.png a été retravaillé.
-- Le fond noir du logo a été rendu transparent.
-- Le favicon a aussi été nettoyé.
-- Le reste du site est conservé comme en V3.3.2.
+Nouveauté :
+- Clic sur une photo = ouverture plein écran.
+- Fond noir premium.
+- Navigation précédent / suivant.
+- Fermeture avec la croix ou la touche Échap.
+- Navigation clavier possible sur ordinateur.
+- Design mobile conservé.
 
 Fichiers à envoyer sur GitHub :
 - index.html
