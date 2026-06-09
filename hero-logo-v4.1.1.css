@@ -1,0 +1,18 @@
+/* V4.1.1 Logo centré */
+
+.hero-logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0 auto 24px auto;
+    transform:scale(0.90);
+}
+
+.hero-logo img{
+    display:block;
+    margin:auto;
+}
+
+.hero-logo::after{
+    opacity:1;
+}
