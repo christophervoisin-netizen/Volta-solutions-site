@@ -1,0 +1,12 @@
+CHECKLIST V4.1
+
+[ ] Nettoyer les scripts JS dupliqués
+[ ] Vérifier sitemap.xml
+[ ] Vérifier robots.txt
+[ ] Vérifier meta description
+[ ] Vérifier données structurées
+[ ] Contrôler responsive mobile
+[ ] Tester formulaire devis
+[ ] Tester galerie et filtres
+[ ] Tester boutons flottants
+[ ] Tester retour haut
