@@ -1,0 +1,63 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#111;
+    color:white;
+}
+
+header{
+    background:linear-gradient(135deg,#101010,#1c3553);
+    text-align:center;
+    padding:80px 20px;
+}
+
+h1{
+    font-size:3rem;
+    color:#f5c542;
+    margin-bottom:20px;
+}
+
+.slogan{
+    font-size:1.3rem;
+    color:#6dcff6;
+    margin-bottom:30px;
+}
+
+.bouton{
+    display:inline-block;
+    padding:15px 30px;
+    background:#f5c542;
+    color:black;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+section{
+    max-width:1000px;
+    margin:auto;
+    padding:60px 20px;
+}
+
+h2{
+    color:#f5c542;
+    margin-bottom:30px;
+}
+
+.services{
+    display:grid;
+    gap:15px;
+    font-size:1.2rem;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:black;
+    color:#888;
+}
