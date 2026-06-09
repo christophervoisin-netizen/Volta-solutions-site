@@ -8,7 +8,7 @@
   <meta name="description" content="Volta Solutions, électricien autour de Louhans : électricité générale, rénovation électrique, dépannage, photovoltaïque, stockage énergie, domotique, automatisme et borne de recharge en Saône-et-Loire et secteurs proches du Jura." />
 
 
-  <meta name="keywords" content="électricien Louhans, électricien Montagny-près-Louhans, électricien Saône-et-Loire, électricien Jura proche Louhans, dépannage électrique Louhans, rénovation tableau électrique, installation électrique, photovoltaïque Louhans, batterie de stockage, domotique, automatisme, borne de recharge, IRVE, Bletterans, Bletterans, Saint-Amour, Cuiseaux, Saint-Germain-du-Bois" />
+  <meta name="keywords" content="électricien Louhans, électricien Montagny-près-Louhans, électricien Saône-et-Loire, électricien Jura proche Louhans, dépannage électrique Louhans, rénovation tableau électrique, installation électrique, photovoltaïque Louhans, batterie de stockage, domotique, automatisme, borne de recharge, IRVE, Bletterans, Saint-Amour, Cuiseaux, Saint-Germain-du-Bois" />
   <meta name="author" content="Christopher Voisin - Volta Solutions" />
 
   <meta property="og:title" content="Volta Solutions | Électricité, Photovoltaïque & Domotique" />
@@ -36,11 +36,9 @@
       "Montagny-près-Louhans",
       "Louhans",
       "Bletterans",
-      "Bletterans",
       "Lons-le-Saunier",
       "Saône-et-Loire",
       "Jura",
-      "Bletterans",
       "Saint-Amour",
       "Cuiseaux",
       "Saint-Germain-du-Bois"
@@ -48,79 +46,7 @@
     "url": "https://volta-solutions-site.christophervoisin.workers.dev"
   }
   
-  const quoteForm = document.getElementById('quoteForm');
-
-  if (quoteForm) {
-    quoteForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(quoteForm);
-      const projets = Array.from(quoteForm.querySelectorAll('input[name="projet"]:checked'))
-        .map(input => input.value);
-
-      const nom = formData.get('nom') || '';
-      const telephone = formData.get('telephone') || '';
-      const email = formData.get('email') || '';
-      const ville = formData.get('ville') || '';
-      const message = formData.get('message') || '';
-
-      const subject = `Demande de devis Volta Solutions - ${ville || nom || 'Nouveau projet'}`;
-
-      const body = [
-        'Bonjour Christopher,',
-        '',
-        'Je souhaite obtenir un devis pour mon projet.',
-        '',
-        'Type de projet :',
-        projets.length ? projets.map(p => `- ${p}`).join('\n') : '- Non précisé',
-        '',
-        'Coordonnées :',
-        `Nom : ${nom}`,
-        `Téléphone : ${telephone}`,
-        `Email : ${email}`,
-        `Ville : ${ville}`,
-        '',
-        'Description du projet :',
-        message || 'Non précisé',
-        '',
-        'Merci,'
-      ].join('\n');
-
-      const mailto = `mailto:christophervoisin@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-    });
-  }
-
-
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const filterCards = document.querySelectorAll('.premium-filter-grid .real-card');
-
-  if (filterButtons.length && filterCards.length) {
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const filter = button.dataset.filter;
-
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        filterCards.forEach((card, index) => {
-          const category = card.dataset.category;
-          const shouldShow = filter === 'all' || category === filter;
-
-          if (shouldShow) {
-            card.classList.remove('filtered-hidden');
-            card.style.animationDelay = `${Math.min(index * 45, 220)}ms`;
-            card.classList.add('filter-pop');
-            setTimeout(() => card.classList.remove('filter-pop'), 420);
-          } else {
-            card.classList.add('filtered-hidden');
-          }
-        });
-      });
-    });
-  }
-
-</script>
+  </script>
 
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
@@ -142,9 +68,10 @@
   </nav>
 
   <div class="hero-content">
-    <img src="volta-logo.png" alt="Logo Volta Solutions" class="main-logo" />
-
-    <p class="badge">Sécurité • Qualité • Fiabilité</p>
+    <div class="hero-brand-block">
+      <img src="volta-logo.png" alt="Logo Volta Solutions" class="main-logo" />
+      <p class="badge">Sécurité • Qualité • Fiabilité</p>
+    </div>
 
     <h1>L’énergie maîtrisée,<br>le confort assuré.</h1>
 

@@ -1,24 +1,21 @@
-VoltaSite V4.0 - Galerie Premium + Filtres
+VoltaSite V4.2.1 - Logo Hero Fix COMPLET
 
-Nouveautés :
-- Filtres dans la galerie :
-  Tout, Électricité, Photovoltaïque, Stockage, Borne.
-- Animation fluide au changement de filtre.
-- Effet premium sur les cartes de réalisation.
-- Halo et zoom au survol.
-- Compatible mobile avec filtres horizontaux.
-- Galerie plein écran conservée.
-- Formulaire de devis V3.8 conservé.
-- SEO local, footer premium, mentions légales et politique de confidentialité conservés.
+Cette version contient les vrais fichiers du site modifiés, pas seulement un patch.
 
-Fichiers à envoyer sur GitHub :
+Corrections :
+- Le logo et le badge du Hero sont regroupés dans un seul bloc HTML.
+- Le bloc est centré réellement.
+- Le logo est réduit d'environ 10%.
+- Le badge est placé sous le logo et aligné au centre.
+- Nettoyage du JavaScript qui était présent par erreur dans le script JSON-LD du <head>.
+- Réduction de petits doublons SEO.
+- Galerie premium, filtres, lightbox, formulaire, footer, mentions légales et confidentialité conservés.
+
+Fichiers principaux :
 - index.html
 - style.css
-- robots.txt
-- sitemap.xml
 - mentions-legales.html
 - politique-confidentialite.html
 - favicon.png
 - volta-logo.png
-- README.txt
-- toutes les images .jpg
+- images .jpg
