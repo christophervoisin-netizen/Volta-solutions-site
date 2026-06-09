@@ -1719,3 +1719,15 @@ body.lightbox-open {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* V3.7.1 - SEO local fusionné avec zone d’intervention */
+
+#seo-local {
+  display: none !important;
+}
+
+.zone .section-text,
+#zone .section-text {
+  max-width: 820px;
+}

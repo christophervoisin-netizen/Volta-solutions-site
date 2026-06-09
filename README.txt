@@ -1,14 +1,14 @@
-VoltaSite V3.7.0 - SEO Local
+VoltaSite V3.7.1 - SEO Local Zone Fusionnée
 
-Nouveautés :
-- Titre SEO optimisé pour Louhans, électricité, photovoltaïque, domotique et borne de recharge.
-- Description SEO locale renforcée.
-- Mots-clés locaux : Louhans, Montagny-près-Louhans, Saône-et-Loire, Jura proche, Saint-Amour, Bletterans, Lons-le-Saunier, Cuiseaux.
-- Section SEO locale ajoutée.
-- Données structurées enrichies.
-- sitemap.xml ajouté.
-- robots.txt ajouté.
-- Footer ajusté avec Saône-et-Loire + secteurs proches du Jura.
+Modifications :
+- Suppression de la section SEO locale séparée pour éviter le doublon visuel.
+- SEO local intégré directement dans la zone d’intervention existante.
+- Texte optimisé : Louhans, Saône-et-Loire, secteurs proches du Jura.
+- Liste de villes plus compacte : Louhans, Bletterans, Lons-le-Saunier, Saint-Amour / Cuiseaux.
+- robots.txt conservé.
+- sitemap.xml conservé.
+- Footer premium et pages légales conservés.
+- Galerie, avis, méthode premium et animations conservés.
 
 Fichiers à envoyer sur GitHub :
 - index.html
@@ -21,5 +21,3 @@ Fichiers à envoyer sur GitHub :
 - volta-logo.png
 - README.txt
 - toutes les images .jpg
-
-Plus tard, quand le nom de domaine officiel sera choisi, il faudra remplacer l'URL workers.dev dans sitemap.xml et les données SEO.
