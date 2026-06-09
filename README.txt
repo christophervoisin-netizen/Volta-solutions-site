@@ -1,15 +1,16 @@
-VoltaSite V3.2.5 - Logo Original Corrige CSS
+VoltaSite V3.3.1 - Galerie Reelle Premium SANS dossier images
 
-Correction :
-- Retour au logo original plus joli.
-- Taille du logo réduite pour retrouver le rendu précédent.
-- Correction CSS pour masquer le petit trait orange à droite du A.
-- Animation du logo conservée.
-- Effet remontée éclair conservé.
+Version spéciale téléphone :
+- Toutes les images sont à la racine.
+- Aucun dossier images à envoyer.
+- Tu peux sélectionner tous les fichiers et les envoyer directement sur GitHub.
 
-Fichiers à remplacer sur GitHub :
+Fichiers à envoyer sur GitHub :
 - index.html
 - style.css
-- volta-logo.png
 - favicon.png
+- volta-logo.png
 - README.txt
+- toutes les images .jpg
+
+Après le commit, Cloudflare déploie automatiquement.
