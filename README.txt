@@ -1,9 +1,9 @@
-VoltaSite V3.2.2 - Remontee Eclair
+VoltaSite V3.2.3 - Eclair Ameliore
 
-Nouveauté :
-- Bouton retour en haut transformé en éclair.
-- Animation éclair doré pendant la remontée fluide.
-- Effet lumineux discret, style Volta Solutions.
+Corrections :
+- Le bouton retour en haut redevient une flèche ↑.
+- L’éclair animé au milieu de l’écran est plus visible, plus net et plus premium.
+- Remontée fluide conservée.
 
 Fichiers à remplacer sur GitHub :
 - index.html
@@ -11,5 +11,3 @@ Fichiers à remplacer sur GitHub :
 - volta-logo.png
 - favicon.png
 - README.txt
-
-Après le commit, Cloudflare déploie automatiquement.

@@ -489,7 +489,7 @@ footer {
   background: linear-gradient(135deg, #ffd45c, #ff8d21);
   text-decoration: none;
   font-weight: 900;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   opacity: 0;
   transform: translateY(12px);
   pointer-events: none;
@@ -510,53 +510,87 @@ footer {
   left: 50%;
   top: 50%;
   z-index: 80;
-  transform: translate(-50%, -50%) scale(0.4);
-  font-size: clamp(4rem, 18vw, 8rem);
-  color: #ffd45c;
-  text-shadow:
-    0 0 18px rgba(255, 212, 92, .85),
-    0 0 42px rgba(255, 141, 33, .65),
-    0 0 85px rgba(255, 141, 33, .35);
+  width: 120px;
+  height: 220px;
   opacity: 0;
   pointer-events: none;
-  filter: drop-shadow(0 0 18px rgba(255, 191, 69, .75));
+  transform: translate(-50%, -50%) scale(.55);
+}
+
+.lightning-scroll span {
+  position: absolute;
+  inset: 0;
+  display: block;
+  filter:
+    drop-shadow(0 0 10px rgba(255, 215, 95, .95))
+    drop-shadow(0 0 28px rgba(255, 145, 28, .8))
+    drop-shadow(0 0 55px rgba(255, 145, 28, .45));
+}
+
+.lightning-scroll span::before {
+  content: "";
+  position: absolute;
+  left: 34px;
+  top: 0;
+  width: 72px;
+  height: 220px;
+  background: linear-gradient(180deg, #fff4b0, #ffd34e 42%, #ff8d21);
+  clip-path: polygon(54% 0%, 100% 0%, 67% 39%, 100% 39%, 26% 100%, 42% 55%, 0% 55%);
+}
+
+.lightning-scroll span::after {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 10px;
+  width: 110px;
+  height: 190px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 211, 78, .45);
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  transform: rotate(-20deg);
+  filter: drop-shadow(0 0 18px rgba(255, 180, 50, .65));
 }
 
 .lightning-scroll.active {
-  animation: voltaLightning 1.35s ease-in-out forwards;
+  animation: voltaLightningMove 1.65s cubic-bezier(.22,.76,.3,1) forwards;
 }
 
-@keyframes voltaLightning {
+.lightning-scroll.active span {
+  animation: voltaLightningPulse 1.65s ease-in-out forwards;
+}
+
+@keyframes voltaLightningMove {
   0% {
     opacity: 0;
-    transform: translate(-50%, 35vh) scale(0.45) rotate(-8deg);
+    transform: translate(-50%, 32vh) scale(.45) rotate(-7deg);
   }
   18% {
     opacity: 1;
-    transform: translate(-50%, 18vh) scale(0.78) rotate(5deg);
+    transform: translate(-50%, 18vh) scale(.85) rotate(4deg);
   }
-  45% {
+  50% {
     opacity: 1;
-    transform: translate(-50%, -5vh) scale(1) rotate(-4deg);
+    transform: translate(-50%, -6vh) scale(1) rotate(-3deg);
   }
-  72% {
-    opacity: .85;
-    transform: translate(-50%, -26vh) scale(0.92) rotate(4deg);
+  78% {
+    opacity: .95;
+    transform: translate(-50%, -30vh) scale(.95) rotate(3deg);
   }
   100% {
     opacity: 0;
-    transform: translate(-50%, -45vh) scale(0.55) rotate(0deg);
+    transform: translate(-50%, -48vh) scale(.7) rotate(0deg);
   }
 }
 
-.lightning-scroll::after {
-  content: "";
-  position: absolute;
-  inset: -22px;
-  border-radius: 999px;
-  background: radial-gradient(circle, rgba(255, 191, 69, .30), transparent 62%);
-  z-index: -1;
+@keyframes voltaLightningPulse {
+  0%, 100% { opacity: .2; }
+  18%, 74% { opacity: 1; }
+  42% { opacity: .78; }
+  52% { opacity: 1; }
 }
+
 
 @media (max-width: 900px) {
   .navbar {
