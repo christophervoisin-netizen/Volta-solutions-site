@@ -1,9 +1,9 @@
-VoltaSite V3.2.4 - Logo Corrige
+VoltaSite V3.2.5 - Logo Original Corrige CSS
 
 Correction :
-- Nouveau logo PNG propre.
-- Défaut visuel sur le A supprimé.
-- Favicon nettoyé.
+- Retour au logo original plus joli.
+- Taille du logo réduite pour retrouver le rendu précédent.
+- Correction CSS pour masquer le petit trait orange à droite du A.
 - Animation du logo conservée.
 - Effet remontée éclair conservé.
 

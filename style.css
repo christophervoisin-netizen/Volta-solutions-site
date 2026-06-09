@@ -120,10 +120,13 @@ a { color: inherit; }
 }
 
 .main-logo {
-  width: min(340px, 78vw);
+  width: min(300px, 72vw);
   margin-bottom: 22px;
   filter: drop-shadow(0 0 28px rgba(255, 188, 66, .32));
   animation: floatLogo 4s ease-in-out infinite;
+  clip-path: inset(0 3px 0 0);
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 @keyframes floatLogo {
