@@ -1,0 +1,41 @@
+/* V4.0.a ENERGY GLOW */
+/* Appliquer une variante de ce glow sur toutes les cartes interactives */
+
+.interactive-card:hover,
+.real-card:hover,
+.review:hover,
+.card:hover,
+.why-card:hover,
+.timeline-step:hover,
+.filter-btn:hover,
+.btn:hover{
+ transform:translateY(-6px) scale(1.02);
+ box-shadow:
+   0 0 30px rgba(255,200,50,.25),
+   0 0 70px rgba(255,200,50,.15);
+}
+
+.interactive-card::before,
+.real-card::before,
+.review::before,
+.card::before,
+.why-card::before{
+ content:"";
+ position:absolute;
+ inset:-25%;
+ background:radial-gradient(circle,
+ rgba(255,200,50,.35) 0%,
+ rgba(255,200,50,.15) 40%,
+ transparent 75%);
+ opacity:0;
+ transition:.35s;
+ pointer-events:none;
+}
+
+.interactive-card:hover::before,
+.real-card:hover::before,
+.review:hover::before,
+.card:hover::before,
+.why-card:hover::before{
+ opacity:1;
+}
