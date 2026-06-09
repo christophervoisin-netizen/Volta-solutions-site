@@ -250,6 +250,12 @@
 <a href="#accueil" class="back-to-top" aria-label="Retour en haut">↑</a>
 
 <script>
+
+  if (window.location.hash) {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+    window.scrollTo(0, 0);
+  }
+
   const topButton = document.querySelector('.back-to-top');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 500) {

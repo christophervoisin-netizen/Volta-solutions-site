@@ -120,7 +120,7 @@ a { color: inherit; }
 }
 
 .main-logo {
-  width: min(260px, 70vw);
+  width: min(340px, 78vw);
   margin-bottom: 22px;
   filter: drop-shadow(0 0 28px rgba(255, 188, 66, .32));
   animation: floatLogo 4s ease-in-out infinite;
@@ -445,19 +445,21 @@ footer {
 
 .floating-actions {
   position: fixed;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14px;
   z-index: 50;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-  background: rgba(5,5,5,.82);
+  grid-template-columns: repeat(3, auto);
+  gap: 7px;
+  background: rgba(5,5,5,.78);
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 191, 69, .18);
-  border-radius: 24px;
-  padding: 8px;
+  border-radius: 999px;
+  padding: 7px;
   box-shadow: 0 18px 55px rgba(0,0,0,.45);
+  width: auto;
+  max-width: calc(100% - 20px);
 }
 
 .floating-actions a {
@@ -466,15 +468,16 @@ footer {
   font-weight: 900;
   color: #101010;
   background: linear-gradient(135deg, #ffd45c, #ff8d21);
-  padding: 12px 8px;
-  border-radius: 18px;
-  font-size: .88rem;
+  padding: 10px 15px;
+  border-radius: 999px;
+  font-size: .82rem;
+  white-space: nowrap;
 }
 
 .back-to-top {
   position: fixed;
   right: 16px;
-  bottom: 86px;
+  bottom: 78px;
   width: 44px;
   height: 44px;
   border-radius: 999px;
@@ -545,7 +548,14 @@ footer {
     min-height: 240px;
   }
 
+  .floating-actions {
+    width: calc(100% - 18px);
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 22px;
+  }
+
   .floating-actions a {
-    font-size: .76rem;
+    font-size: .74rem;
+    padding: 10px 6px;
   }
 }
