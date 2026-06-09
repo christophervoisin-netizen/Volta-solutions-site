@@ -1,21 +1,27 @@
-VoltaSite V4.2.1 - Logo Hero Fix COMPLET
+VoltaSite V4.2.4 - V4 originale + correction Hero uniquement
 
-Cette version contient les vrais fichiers du site modifiés, pas seulement un patch.
+Recherche approfondie :
+La version précédente pouvait casser le site car elle repartait d'une base qui ne correspondait pas exactement
+à la V4 Galerie Premium installée.
 
-Corrections :
-- Le logo et le badge du Hero sont regroupés dans un seul bloc HTML.
-- Le bloc est centré réellement.
-- Le logo est réduit d'environ 10%.
-- Le badge est placé sous le logo et aligné au centre.
-- Nettoyage du JavaScript qui était présent par erreur dans le script JSON-LD du <head>.
-- Réduction de petits doublons SEO.
-- Galerie premium, filtres, lightbox, formulaire, footer, mentions légales et confidentialité conservés.
+Cette version repart du ZIP V4.0 Galerie Premium vérifié comme complet.
 
-Fichiers principaux :
-- index.html
-- style.css
-- mentions-legales.html
-- politique-confidentialite.html
-- favicon.png
-- volta-logo.png
-- images .jpg
+Conservé :
+- Formulaire premium
+- Galerie Premium
+- Filtres Électricité / Photovoltaïque / Stockage / Borne
+- Lightbox plein écran
+- Halos lumineux
+- Animations des cartes
+- Textes et tailles d'origine
+- Pages légales
+- Footer premium
+- SEO local
+
+Modification unique :
+- Logo + badge du Hero regroupés dans un bloc centré.
+- Logo réduit légèrement.
+- Badge placé sous le logo.
+
+À envoyer sur GitHub comme d'habitude :
+tous les fichiers contenus dans ce ZIP.
