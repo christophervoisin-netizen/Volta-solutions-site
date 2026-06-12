@@ -30,7 +30,7 @@
     "founder": "Christopher Voisin",
     "description": "Électricité générale, photovoltaïque, domotique, automatisme, dépannage et bornes de recharge autour de Louhans et Montagny-près-Louhans.",
     "telephone": "+33620449387",
-    "email": "christophervoisin@outlook.com",
+    "email": "voltasolutions71@mail.fr",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "305 chemin de la Ripe Pageault",
@@ -467,11 +467,16 @@
   <p class="section-kicker">Demande de devis</p>
   <h2>Parlez-moi de votre projet</h2>
   <p class="section-text">
-    Décrivez votre besoin en quelques secondes. Votre demande sera préparée automatiquement
-    dans votre application email pour un premier échange clair et rapide.
+    Décrivez votre besoin en quelques secondes. Votre demande est envoyée directement
+    à Volta Solutions 71, sans ouvrir votre application email.
   </p>
 
-  <form id="quoteForm" class="quote-form">
+  <form id="quoteForm" class="quote-form" action="https://formsubmit.co/voltasolutions71@mail.fr" method="POST" enctype="multipart/form-data">
+    <input type="hidden" name="_subject" value="Nouvelle demande de devis - Volta Solutions 71">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://voltasolutions71.fr/?devis=envoye#devis">
+    <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
     <div class="form-block">
       <h3>Votre projet</h3>
       <div class="project-grid">
@@ -501,7 +506,7 @@
 
         <label>
           <span>Email</span>
-          <input type="email" name="email" placeholder="Votre email">
+          <input type="email" name="email" placeholder="Votre email" required>
         </label>
 
         <label>
@@ -518,8 +523,14 @@
         <textarea name="message" rows="6" placeholder="Exemple : remplacement d’un tableau électrique, panne à diagnostiquer, installation photovoltaïque, borne de recharge..."></textarea>
       </label>
 
+      <label class="file-label">
+        <span>Photos / documents utiles (facultatif)</span>
+        <input type="file" name="pieces_jointes" accept="image/*,.pdf" multiple>
+        <small>Vous pouvez joindre des photos du chantier, du tableau électrique, d'une panne ou un PDF.</small>
+      </label>
+
       <div class="photo-note">
-        📷 Vous pourrez ajouter des photos en pièce jointe depuis votre application email après l’ouverture du message.
+        📷 Votre demande est envoyée directement depuis le site avec les photos ajoutées, sans ouvrir votre boîte email.
       </div>
     </div>
 
@@ -532,7 +543,7 @@
     <p>Besoin d’un contact direct ?</p>
     <div>
       <a href="tel:0620449387" class="btn secondary">📞 Appeler</a>
-      <a href="mailto:christophervoisin@outlook.com" class="btn secondary">✉️ Email</a>
+      <a href="mailto:voltasolutions71@mail.fr" class="btn secondary">✉️ Email</a>
     </div>
   </div>
 </section>
@@ -574,7 +585,7 @@
       <h3>Contact</h3>
       <p>📍 Basé à Montagny-près-Louhans</p>
       <p>📞 <a href="tel:0620449387">06 20 44 93 87</a></p>
-      <p>✉️ <a href="mailto:christophervoisin@outlook.com">christophervoisin@outlook.com</a></p>
+      <p>✉️ <a href="mailto:voltasolutions71@mail.fr">voltasolutions71@mail.fr</a></p>
     </div>
   </div>
 
@@ -601,7 +612,7 @@
 <div class="floating-actions" aria-label="Actions rapides">
   <a href="tel:0620449387">📞 Appeler</a>
   <a href="#devis">📝 Devis</a>
-  <a href="mailto:christophervoisin@outlook.com">✉️ Email</a>
+  <a href="mailto:voltasolutions71@mail.fr">✉️ Email</a>
 </div>
 
 <button class="back-to-top" aria-label="Retour en haut">↑</button>
@@ -707,48 +718,13 @@
     if (event.key === 'ArrowRight') moveLightbox(1);
   });
 
-
   const quoteForm = document.getElementById('quoteForm');
 
-  if (quoteForm) {
-    quoteForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      const formData = new FormData(quoteForm);
-      const projets = Array.from(quoteForm.querySelectorAll('input[name="projet"]:checked'))
-        .map(input => input.value);
-
-      const nom = formData.get('nom') || '';
-      const telephone = formData.get('telephone') || '';
-      const email = formData.get('email') || '';
-      const ville = formData.get('ville') || '';
-      const message = formData.get('message') || '';
-
-      const subject = `Demande de devis Volta Solutions 71 - ${ville || nom || 'Nouveau projet'}`;
-
-      const body = [
-        'Bonjour Christopher,',
-        '',
-        'Je souhaite obtenir un devis pour mon projet.',
-        '',
-        'Type de projet :',
-        projets.length ? projets.map(p => `- ${p}`).join('\n') : '- Non précisé',
-        '',
-        'Coordonnées :',
-        `Nom : ${nom}`,
-        `Téléphone : ${telephone}`,
-        `Email : ${email}`,
-        `Ville : ${ville}`,
-        '',
-        'Description du projet :',
-        message || 'Non précisé',
-        '',
-        'Merci,'
-      ].join('\n');
-
-      const mailto = `mailto:christophervoisin@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      window.location.href = mailto;
-    });
+  if (quoteForm && new URLSearchParams(window.location.search).get('devis') === 'envoye') {
+    const success = document.createElement('div');
+    success.className = 'form-success';
+    success.textContent = '✅ Votre demande de devis a bien été envoyée. Volta Solutions 71 vous répondra rapidement.';
+    quoteForm.prepend(success);
   }
 
 

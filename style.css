@@ -2198,3 +2198,36 @@ body.lightbox-open {
     letter-spacing: .22em;
   }
 }
+
+
+/* V4.4.0 - Formulaire direct avec photos */
+.file-label {
+  display: grid;
+  gap: 10px;
+  text-align: left;
+  margin-top: 18px;
+}
+
+.file-label input[type="file"] {
+  cursor: pointer;
+  padding: 16px;
+  border-style: dashed;
+  background: rgba(255,255,255,.035);
+}
+
+.file-label small {
+  color: #d8c9b8;
+  font-size: .88rem;
+  line-height: 1.45;
+}
+
+.form-success {
+  margin-bottom: 20px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(80, 220, 140, .45);
+  background: rgba(80, 220, 140, .12);
+  color: #dfffe9;
+  font-weight: 900;
+  text-align: center;
+}

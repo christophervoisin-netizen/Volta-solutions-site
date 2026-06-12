@@ -28,3 +28,19 @@ Modifié :
 - Valider Google Search Console avec le TXT Cloudflare.
 - Envoyer sitemap.xml dans Search Console.
 - Remplacer l'email Outlook par contact@voltasolutions71.fr quand l'adresse pro sera configurée.
+
+
+VoltaSite V4.4.0 - Formulaire de devis direct + photos
+
+Modifié dans cette version :
+- Remplacement de l'ancienne adresse email par voltasolutions71@mail.fr dans index.html, mentions légales, politique de confidentialité et données structurées.
+- Remplacement du fonctionnement mailto par un vrai formulaire intégré au site via FormSubmit.
+- Envoi direct au clic sur le bouton, sans ouvrir la boîte email du visiteur.
+- Ajout d'un champ de pièces jointes/photos facultatif : images et PDF, sélection multiple.
+- Ajout d'un message de confirmation après retour sur le site.
+- Mise à jour de la politique de confidentialité pour mentionner les photos/documents et le service technique d'envoi du formulaire.
+
+Important après mise en ligne :
+- Faire un premier test depuis le formulaire du site.
+- Au premier envoi, FormSubmit peut envoyer un email de confirmation/activation à voltasolutions71@mail.fr : cliquer sur le lien reçu pour activer définitivement la réception.
+- Vérifier les spams lors du premier test.
