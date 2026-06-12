@@ -474,7 +474,8 @@
   <form id="quoteForm" class="quote-form" action="https://formsubmit.co/voltasolutions71@mail.fr" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value="Nouvelle demande de devis - Volta Solutions 71">
     <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_replyto" value="email">
+    <input type="hidden" name="_autoresponse" value="Bonjour,&#10;&#10;Nous avons bien reçu votre demande de devis pour Volta Solutions 71.&#10;&#10;Votre demande va être étudiée et nous reviendrons vers vous dans les meilleurs délais.&#10;&#10;Cordialement,&#10;Volta Solutions 71&#10;L’énergie maîtrisée, le confort assuré.">
     <input type="hidden" name="_next" value="https://voltasolutions71.fr/?devis=envoye#devis">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
     <div class="form-block">
@@ -535,6 +536,14 @@
     </div>
 
     <button type="submit" class="btn primary quote-submit">⚡ Envoyer ma demande de devis</button>
+
+    <div id="quoteStatus" class="quote-status" aria-live="polite" hidden>
+      <div class="volta-loader" aria-hidden="true"><span></span></div>
+      <div>
+        <strong>Transmission électrique en cours...</strong>
+        <p>Votre demande est en train d’être envoyée à Volta Solutions 71.</p>
+      </div>
+    </div>
 
     <p class="quote-reassurance">Réponse rapide • Devis gratuit • Sans engagement</p>
   </form>
@@ -619,7 +628,10 @@
 <div class="lightning-scroll" aria-hidden="true"><span></span></div>
 
 <script>
-  if (window.location.hash) {
+  const pageParams = new URLSearchParams(window.location.search);
+  const devisEnvoye = pageParams.get('devis') === 'envoye';
+
+  if (window.location.hash && !devisEnvoye) {
     history.replaceState(null, "", window.location.pathname + window.location.search);
     window.scrollTo(0, 0);
   }
@@ -719,12 +731,53 @@
   });
 
   const quoteForm = document.getElementById('quoteForm');
+  const quoteSubmit = document.querySelector('.quote-submit');
+  const quoteStatus = document.getElementById('quoteStatus');
 
-  if (quoteForm && new URLSearchParams(window.location.search).get('devis') === 'envoye') {
+  if (quoteForm && devisEnvoye) {
     const success = document.createElement('div');
-    success.className = 'form-success';
-    success.textContent = '✅ Votre demande de devis a bien été envoyée. Volta Solutions 71 vous répondra rapidement.';
+    success.className = 'form-success form-success-premium';
+    success.innerHTML = `
+      <div class="success-bolt">⚡</div>
+      <div>
+        <strong>Demande envoyée avec succès !</strong>
+        <p>Merci pour votre confiance. Votre demande de devis a bien été transmise à <b>Volta Solutions 71</b>.</p>
+        <p>Nous reviendrons vers vous dans les meilleurs délais. Pensez à vérifier vos spams si vous attendez aussi un accusé de réception automatique.</p>
+      </div>
+    `;
     quoteForm.prepend(success);
+
+    const scrollToQuote = () => document.getElementById('devis')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(scrollToQuote, 150);
+    setTimeout(scrollToQuote, 850);
+  }
+
+  if (quoteForm && quoteSubmit && quoteStatus) {
+    let voltaSubmitLocked = false;
+
+    quoteForm.addEventListener('submit', (event) => {
+      if (voltaSubmitLocked) return;
+      if (!quoteForm.checkValidity()) return;
+
+      event.preventDefault();
+      voltaSubmitLocked = true;
+
+      quoteForm.classList.add('is-sending');
+      quoteStatus.hidden = false;
+      quoteSubmit.disabled = true;
+      quoteSubmit.innerHTML = '⚡ Transmission en cours...';
+      quoteStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      if (lightningScroll) {
+        lightningScroll.classList.remove('active');
+        void lightningScroll.offsetWidth;
+        lightningScroll.classList.add('active');
+      }
+
+      setTimeout(() => {
+        quoteForm.submit();
+      }, 1200);
+    });
   }
 
 

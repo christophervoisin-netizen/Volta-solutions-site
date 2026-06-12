@@ -44,3 +44,33 @@ Important après mise en ligne :
 - Faire un premier test depuis le formulaire du site.
 - Au premier envoi, FormSubmit peut envoyer un email de confirmation/activation à voltasolutions71@mail.fr : cliquer sur le lien reçu pour activer définitivement la réception.
 - Vérifier les spams lors du premier test.
+
+
+VoltaSite V4.5.0 - Animation électrique + confirmation premium
+
+Ajouté dans cette version :
+- Animation électrique pendant l'envoi du formulaire de demande de devis.
+- Bouton d'envoi bloqué pendant la transmission pour éviter les doubles clics.
+- Message de confirmation premium après retour sur le site.
+- Tentative d'accusé de réception automatique au client via le champ _autoresponse de FormSubmit.
+- Conservation du formulaire direct avec photos/documents et envoi vers voltasolutions71@mail.fr.
+
+Important :
+- FormSubmit indique que l'accusé de réception automatique ne fonctionne pas si le reCAPTCHA est désactivé ou si le formulaire est envoyé en AJAX.
+- Pour permettre l'accusé de réception client, la ligne _captcha=false a été retirée.
+- Si FormSubmit affiche une étape anti-spam, c'est normal et c'est le compromis pour permettre l'accusé de réception automatique.
+- Les fichiers joints restent limités par les règles FormSubmit : total maximum annoncé de 10 Mo.
+
+
+VoltaSite V4.5.1 - Correctif animation visible + retour devis
+
+Corrigé dans cette version :
+- Ajout du CSS manquant pour l'animation électrique du formulaire.
+- L'envoi du formulaire est maintenant retardé volontairement d'environ 1,2 seconde pour que l'animation soit réellement visible avant la redirection FormSubmit.
+- Le bouton d'envoi est bloqué pendant la transmission pour éviter les doubles clics.
+- Le message de confirmation premium reste affiché après le retour sur le site.
+- Le retour automatique vers la section devis est renforcé après succès.
+
+À savoir :
+- L'accusé de réception automatique dépend de FormSubmit. Il peut arriver avec délai ou passer en spam côté client.
+- Si l'accusé automatique ne part pas malgré _autoresponse, il faudra passer plus tard par une solution dédiée type Cloudflare Worker + service d'envoi email.
