@@ -57,6 +57,7 @@
 
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
+  <!-- VoltaSite V4.5.2 - Correctif CSS stable + animation devis -->
 </head>
 
 <body>
@@ -474,7 +475,6 @@
   <form id="quoteForm" class="quote-form" action="https://formsubmit.co/voltasolutions71@mail.fr" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value="Nouvelle demande de devis - Volta Solutions 71">
     <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_replyto" value="email">
     <input type="hidden" name="_autoresponse" value="Bonjour,&#10;&#10;Nous avons bien reçu votre demande de devis pour Volta Solutions 71.&#10;&#10;Votre demande va être étudiée et nous reviendrons vers vous dans les meilleurs délais.&#10;&#10;Cordialement,&#10;Volta Solutions 71&#10;L’énergie maîtrisée, le confort assuré.">
     <input type="hidden" name="_next" value="https://voltasolutions71.fr/?devis=envoye#devis">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -632,8 +632,7 @@
   const devisEnvoye = pageParams.get('devis') === 'envoye';
 
   if (window.location.hash && !devisEnvoye) {
-    history.replaceState(null, "", window.location.pathname + window.location.search);
-    window.scrollTo(0, 0);
+    // On garde le comportement normal des ancres, sans forcer le retour en haut.
   }
 
   const topButton = document.querySelector('.back-to-top');

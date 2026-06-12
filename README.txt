@@ -74,3 +74,17 @@ Corrigé dans cette version :
 À savoir :
 - L'accusé de réception automatique dépend de FormSubmit. Il peut arriver avec délai ou passer en spam côté client.
 - Si l'accusé automatique ne part pas malgré _autoresponse, il faudra passer plus tard par une solution dédiée type Cloudflare Worker + service d'envoi email.
+
+
+VoltaSite V4.5.2 - Correctif stabilité visuelle + animation devis
+
+Corrigé dans cette version :
+- Restauration complète du fichier style.css afin de corriger le bug d'affichage : images trop zoomées, textes mal positionnés et mise en page cassée.
+- Ajout des styles manquants pour toutes les sections utilisées par index.html : réalisations premium, galerie, lightbox, formulaire, message de succès et animation électrique.
+- Conservation de l'animation visible avant envoi du formulaire : délai court avant redirection FormSubmit, bouton bloqué et statut “Transmission électrique en cours”.
+- Suppression du retour forcé en haut de page au chargement : les ancres fonctionnent normalement.
+- Conservation du formulaire direct avec photos/documents, envoi vers voltasolutions71@mail.fr et tentative d'accusé automatique client via _autoresponse.
+
+Important :
+- Si l'accusé de réception automatique client ne part pas, cela vient des limites/FormSubmit et non du site. Le message de confirmation sur le site reste fiable.
+- Après mise en ligne, vider le cache Cloudflare ou faire un hard refresh si l'ancien CSS reste affiché.
