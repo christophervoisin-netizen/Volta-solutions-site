@@ -57,7 +57,7 @@
 
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
-  <!-- VoltaSite V4.5.2 - Correctif CSS stable + animation devis -->
+  <!-- VoltaSite V4.5.3 - Retour base stable V4.4 + animation sans blocage -->
 </head>
 
 <body>
@@ -628,11 +628,9 @@
 <div class="lightning-scroll" aria-hidden="true"><span></span></div>
 
 <script>
-  const pageParams = new URLSearchParams(window.location.search);
-  const devisEnvoye = pageParams.get('devis') === 'envoye';
-
-  if (window.location.hash && !devisEnvoye) {
-    // On garde le comportement normal des ancres, sans forcer le retour en haut.
+  if (window.location.hash) {
+    history.replaceState(null, "", window.location.pathname + window.location.search);
+    window.scrollTo(0, 0);
   }
 
   const topButton = document.querySelector('.back-to-top');
@@ -732,6 +730,7 @@
   const quoteForm = document.getElementById('quoteForm');
   const quoteSubmit = document.querySelector('.quote-submit');
   const quoteStatus = document.getElementById('quoteStatus');
+  const devisEnvoye = new URLSearchParams(window.location.search).get('devis') === 'envoye';
 
   if (quoteForm && devisEnvoye) {
     const success = document.createElement('div');
@@ -741,41 +740,20 @@
       <div>
         <strong>Demande envoyée avec succès !</strong>
         <p>Merci pour votre confiance. Votre demande de devis a bien été transmise à <b>Volta Solutions 71</b>.</p>
-        <p>Nous reviendrons vers vous dans les meilleurs délais. Pensez à vérifier vos spams si vous attendez aussi un accusé de réception automatique.</p>
+        <p>Nous reviendrons vers vous dans les meilleurs délais.</p>
       </div>
     `;
     quoteForm.prepend(success);
-
-    const scrollToQuote = () => document.getElementById('devis')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(scrollToQuote, 150);
-    setTimeout(scrollToQuote, 850);
   }
 
   if (quoteForm && quoteSubmit && quoteStatus) {
-    let voltaSubmitLocked = false;
-
-    quoteForm.addEventListener('submit', (event) => {
-      if (voltaSubmitLocked) return;
+    quoteForm.addEventListener('submit', () => {
       if (!quoteForm.checkValidity()) return;
-
-      event.preventDefault();
-      voltaSubmitLocked = true;
 
       quoteForm.classList.add('is-sending');
       quoteStatus.hidden = false;
       quoteSubmit.disabled = true;
       quoteSubmit.innerHTML = '⚡ Transmission en cours...';
-      quoteStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-      if (lightningScroll) {
-        lightningScroll.classList.remove('active');
-        void lightningScroll.offsetWidth;
-        lightningScroll.classList.add('active');
-      }
-
-      setTimeout(() => {
-        quoteForm.submit();
-      }, 1200);
     });
   }
 
