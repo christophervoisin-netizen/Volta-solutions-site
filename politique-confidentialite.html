@@ -44,7 +44,7 @@
     <p>
       Conformément à la réglementation applicable, vous pouvez demander l’accès,
       la rectification ou la suppression de vos données en contactant :
-      <a href="mailto:voltasolutions71@mail.fr">voltasolutions71@mail.fr</a>.
+      <a href="#" class="js-email-link" data-user="voltasolutions71" data-domain="mail.fr"><span data-email-text="volta-contact">Adresse email</span></a>.
     </p>
 
     <h2>Cookies</h2>
@@ -54,6 +54,15 @@
     </p>
   </section>
 </main>
+
+<script>
+  document.querySelectorAll('.js-email-link').forEach((link) => {
+    const email = (link.dataset.user || 'voltasolutions71') + '@' + (link.dataset.domain || 'mail.fr');
+    link.href = 'mailto:' + email;
+    const text = link.querySelector('[data-email-text]');
+    if (text) text.textContent = email;
+  });
+</script>
 
 </body>
 </html>

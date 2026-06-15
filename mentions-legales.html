@@ -21,7 +21,7 @@
     <p>Christopher Voisin</p>
     <p>305 chemin de la Ripe Pageault<br>71500 Montagny-près-Louhans<br>France</p>
     <p>Téléphone : <a href="tel:0620449387">06 20 44 93 87</a></p>
-    <p>Email : <a href="mailto:voltasolutions71@mail.fr">voltasolutions71@mail.fr</a></p>
+    <p>Email : <a href="#" class="js-email-link" data-user="voltasolutions71" data-domain="mail.fr"><span data-email-text="volta-contact">Adresse email</span></a></p>
 
     <h2>Situation administrative</h2>
     <p>
@@ -54,6 +54,15 @@
     </p>
   </section>
 </main>
+
+<script>
+  document.querySelectorAll('.js-email-link').forEach((link) => {
+    const email = (link.dataset.user || 'voltasolutions71') + '@' + (link.dataset.domain || 'mail.fr');
+    link.href = 'mailto:' + email;
+    const text = link.querySelector('[data-email-text]');
+    if (text) text.textContent = email;
+  });
+</script>
 
 </body>
 </html>
