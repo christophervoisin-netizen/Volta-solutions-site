@@ -93,3 +93,11 @@ VoltaSite V4.6.6 - Accueil humain maquette stable
 - Correction des photos trop zoomées avec object-fit contain sur les galeries.
 - Correction de la mise en page du formulaire devis : blocs, grilles, champs lisibles.
 - Conservation du FormSubmit, de l’obfuscation email, de la galerie et des pages légales.
+
+
+VoltaSite V4.6.7 - Correctifs détails après test écran
+- Reprise depuis V4.6.6.
+- Correction photo d'accueil non coupée sur écran portable.
+- Correctifs CSS forts sur le formulaire de devis pour éviter l'affichage en ligne.
+- Correctifs photos réalisations : object-fit contain et wrappers stables pour éviter le zoom.
+- Conservation FormSubmit, lightbox, filtres galerie et pages légales.
