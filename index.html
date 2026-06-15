@@ -559,6 +559,17 @@
   <form id="quoteForm" class="quote-form" action="https://formsubmit.co/" data-fs-user="voltasolutions71" data-fs-domain="mail.fr" method="POST" enctype="multipart/form-data">
     <input type="hidden" name="_subject" value="Nouvelle demande de devis - Volta Solutions 71">
     <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_autoresponse" value="Bonjour,
+
+Merci pour votre demande de devis.
+
+Votre message a bien été transmis à Volta Solutions 71.
+Je reviendrai vers vous dans les meilleurs délais afin d’échanger sur votre projet.
+
+Cordialement,
+Christopher Voisin
+Volta Solutions 71
+06 20 44 93 87">
     <input type="hidden" name="_replyto" value="email">
     <input type="hidden" name="_next" value="https://voltasolutions71.fr/?devis=envoye#devis">
     <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
@@ -837,7 +848,8 @@
       <div>
         <strong>Demande envoyée avec succès !</strong>
         <p>Merci pour votre confiance. Votre demande de devis a bien été transmise à <b>Volta Solutions 71</b>.</p>
-        <p>Nous reviendrons vers vous dans les meilleurs délais.</p>
+        <p>Un email de confirmation peut vous être envoyé automatiquement. Pensez à vérifier vos courriers indésirables si vous ne le voyez pas.</p>
+        <p>Je reviendrai vers vous dans les meilleurs délais.</p>
       </div>
     `;
     quoteForm.prepend(success);
