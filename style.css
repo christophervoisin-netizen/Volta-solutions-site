@@ -1676,3 +1676,281 @@ body.lightbox-open { overflow: hidden !important; }
     max-height: 220px !important;
   }
 }
+
+
+/* ==========================================================
+   V4.7.2 - Section Mon engagement façon maquette
+   Ajout d'une zone humaine avec photo naturelle de Christopher,
+   promesse, valeurs et appel direct sans modifier le formulaire.
+   ========================================================== */
+.engagement-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.engagement-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 8%, rgba(255, 191, 69, .10), transparent 36%),
+    radial-gradient(circle at 18% 58%, rgba(255, 141, 33, .09), transparent 26%),
+    radial-gradient(circle at 88% 64%, rgba(255, 191, 69, .07), transparent 28%);
+}
+
+.engagement-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.engagement-services {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  max-width: 1180px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.engagement-services .why-card {
+  text-align: center !important;
+  min-height: 240px !important;
+  display: grid !important;
+  align-content: center !important;
+  justify-items: center !important;
+}
+
+.engagement-services .why-card span {
+  font-size: 2.75rem !important;
+  filter: drop-shadow(0 0 18px rgba(255, 191, 69, .34));
+}
+
+.engagement-promise {
+  width: min(930px, 100%);
+  margin: 24px auto 34px;
+  padding: 15px 22px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 191, 69, .32);
+  background: rgba(0,0,0,.22);
+  box-shadow: 0 22px 55px rgba(0,0,0,.24), inset 0 0 0 1px rgba(255,255,255,.03);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: #f7ead7;
+}
+
+.engagement-promise span,
+.engagement-promise em {
+  color: #ffc14a;
+}
+
+.engagement-promise span {
+  font-weight: 900;
+  font-size: 1.25rem;
+}
+
+.engagement-promise em {
+  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.engagement-human-row {
+  width: min(1180px, 100%);
+  margin: 0 auto 32px;
+  display: grid;
+  grid-template-columns: 280px repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.engagement-photo-card {
+  margin: 0;
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 191, 69, .26);
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025)), #111;
+  box-shadow: 0 26px 70px rgba(0,0,0,.34), 0 0 34px rgba(255,145,28,.08);
+}
+
+.engagement-photo-card img {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center 38%;
+  background: #0b0b0b;
+}
+
+.engagement-photo-card figcaption {
+  padding: 14px 16px 16px;
+  display: grid;
+  gap: 3px;
+  text-align: left;
+}
+
+.engagement-photo-card figcaption strong {
+  color: #fff;
+}
+
+.engagement-photo-card figcaption span {
+  color: #d9cdbb;
+  font-size: .9rem;
+}
+
+.engagement-photo-card figcaption small {
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #111;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffd45c, #ff8d21);
+}
+
+.engagement-value {
+  position: relative;
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: 16px;
+  align-items: center;
+  text-align: left;
+  padding: 24px 22px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,191,69,.18);
+  background: rgba(255,255,255,.035);
+  box-shadow: 0 24px 60px rgba(0,0,0,.22);
+}
+
+.engagement-value + .engagement-value::before {
+  content: "";
+  position: absolute;
+  left: -12px;
+  top: 18%;
+  bottom: 18%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(255,191,69,.62), transparent);
+}
+
+.engagement-value > span {
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #111;
+  font-size: 1.35rem;
+  background: linear-gradient(135deg, #ffe080, #ff9d2f);
+  box-shadow: 0 0 24px rgba(255, 191, 69, .20);
+}
+
+.engagement-value h3 {
+  color: #ffc14a;
+  margin-bottom: 8px;
+  font-size: 1.22rem;
+}
+
+.engagement-value p {
+  color: #ded2c0;
+  margin: 0;
+}
+
+.engagement-cta {
+  width: min(1120px, 100%);
+  margin: 22px auto 16px;
+  padding: 18px 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 191, 69, .25);
+  background: rgba(0,0,0,.26);
+  box-shadow: 0 24px 70px rgba(0,0,0,.30);
+  display: grid;
+  grid-template-columns: auto minmax(170px, .8fr) 1fr auto;
+  gap: 20px;
+  align-items: center;
+  text-align: left;
+}
+
+.engagement-call-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #ffd45c, #ff8d21);
+  color: #111;
+  font-size: 1.45rem;
+  box-shadow: 0 0 26px rgba(255,191,69,.25);
+}
+
+.engagement-cta-title {
+  display: grid;
+  gap: 2px;
+  color: #fff;
+  font-size: 1.18rem;
+  font-weight: 900;
+}
+
+.engagement-cta-title span {
+  color: #fff;
+}
+
+.engagement-cta p {
+  margin: 0;
+  color: #ded2c0;
+}
+
+.engagement-cta a {
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffd45c, #ff8d21);
+  box-shadow: 0 0 28px rgba(255,172,45,.25);
+}
+
+.engagement-signature {
+  margin: 8px auto 0;
+  color: #d9cdbb;
+  text-align: center;
+  font-size: 1.08rem;
+}
+
+.engagement-signature em {
+  color: #ffc14a;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.engagement-signature span {
+  display: inline-block;
+  margin-top: 4px;
+}
+
+@media (max-width: 1100px) {
+  .engagement-services { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+  .engagement-human-row { grid-template-columns: 1fr 1fr; }
+  .engagement-photo-card { grid-row: span 2; }
+  .engagement-cta { grid-template-columns: auto 1fr; }
+  .engagement-cta p { grid-column: 2; }
+  .engagement-cta a { grid-column: 2; justify-self: start; }
+}
+
+@media (max-width: 760px) {
+  .engagement-services,
+  .engagement-human-row { grid-template-columns: 1fr !important; }
+  .engagement-photo-card { grid-row: auto; }
+  .engagement-photo-card img { height: auto; max-height: 420px; object-fit: contain; }
+  .engagement-value { grid-template-columns: 46px 1fr; }
+  .engagement-value + .engagement-value::before { display: none; }
+  .engagement-cta { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  .engagement-cta p, .engagement-cta a { grid-column: auto; justify-self: center; }
+  .engagement-promise { border-radius: 22px; }
+}
