@@ -87,11 +87,9 @@ VoltaSite V4.5.6 - Sécurité formulaire stable
 Important : pour un masquage encore plus fort, générer une clé Random String dans FormSubmit et remplacer l'action dynamique par cette clé officielle.
 
 
-VoltaSite V4.6.5 - Correctif humain propre depuis V4.5.6 stable
-- Reprise depuis le ZIP original stable V4.5.6.
-- Refonte du haut de page façon maquette : Christopher Voisin, approche humaine, photo, 20 ans d'expérience.
-- Ajout d'une section engagement plus chaleureuse et proche client.
-- Correction des photos de réalisations pour éviter l'effet zoom/cadrage trop serré.
-- Correction du formulaire de devis : mise en page en cartes propres, champs lisibles, boutons et pièces jointes.
-- Conservation du fonctionnement FormSubmit, de l'obfuscation email, des filtres galerie et de la lightbox.
-- Ajout des fichiers christopher-voisin.jpg et christopher-voisin.webp.
+VoltaSite V4.6.6 - Accueil humain maquette stable
+- Reprise depuis la V4.5.6 stable.
+- Hero refait façon maquette : Christopher Voisin, photo professionnelle, navigation premium, badges 20 ans / relation / passion.
+- Correction des photos trop zoomées avec object-fit contain sur les galeries.
+- Correction de la mise en page du formulaire devis : blocs, grilles, champs lisibles.
+- Conservation du FormSubmit, de l’obfuscation email, de la galerie et des pages légales.
