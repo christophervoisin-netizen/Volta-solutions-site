@@ -901,5 +901,37 @@
 
 </script>
 
+
+<script>
+  // V4.7.1 - Filtre galerie robuste : fonctionne même si d'autres styles existent.
+  document.addEventListener('DOMContentLoaded', function () {
+    const gallery = document.querySelector('.premium-filter-grid');
+    const buttons = document.querySelectorAll('.gallery-filters .filter-btn');
+    if (!gallery || !buttons.length) return;
+
+    function applyGalleryFilter(filterValue) {
+      const cards = gallery.querySelectorAll('.real-card');
+      buttons.forEach((btn) => btn.classList.toggle('active', btn.dataset.filter === filterValue));
+
+      cards.forEach((card) => {
+        const category = card.dataset.category || '';
+        const shouldShow = filterValue === 'all' || category === filterValue;
+        card.classList.toggle('filtered-hidden', !shouldShow);
+        card.style.display = shouldShow ? 'flex' : 'none';
+      });
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        applyGalleryFilter(button.dataset.filter || 'all');
+      });
+    });
+
+    applyGalleryFilter('all');
+  });
+</script>
+
 </body>
 </html>
