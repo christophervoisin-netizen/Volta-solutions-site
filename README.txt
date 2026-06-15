@@ -87,20 +87,11 @@ VoltaSite V4.5.6 - Sécurité formulaire stable
 Important : pour un masquage encore plus fort, générer une clé Random String dans FormSubmit et remplacer l'action dynamique par cette clé officielle.
 
 
-VoltaSite V4.6.4 - Version humaine Christopher Voisin conforme à la maquette
-
-Réalisé à partir du ZIP original V4.5.6 stable fourni.
-
-Modifié :
-- Refonte de l’accueil en version plus humaine, proche de la maquette validée.
-- Ajout de Christopher Voisin en titre principal.
-- Ajout de la mention 20 ans d’expérience.
-- Ajout d’une section À propos avec photo, écoute, transparence et durable.
-- Ajout d’un bloc d’appel téléphonique rassurant.
-- Ajout des fichiers christopher-voisin.jpg et christopher-voisin.webp optimisés.
-- Conservation du formulaire sécurisé FormSubmit V4.5.6.
-- Conservation de la galerie, lightbox, pages légales et headers Cloudflare.
-
-Important :
-- Remplacer tout le contenu de l’hébergement par ce dossier complet pour éviter les mélanges d’anciennes versions.
-- Tester la version mobile et le formulaire après mise en ligne.
+VoltaSite V4.6.5 - Correctif humain propre depuis V4.5.6 stable
+- Reprise depuis le ZIP original stable V4.5.6.
+- Refonte du haut de page façon maquette : Christopher Voisin, approche humaine, photo, 20 ans d'expérience.
+- Ajout d'une section engagement plus chaleureuse et proche client.
+- Correction des photos de réalisations pour éviter l'effet zoom/cadrage trop serré.
+- Correction du formulaire de devis : mise en page en cartes propres, champs lisibles, boutons et pièces jointes.
+- Conservation du fonctionnement FormSubmit, de l'obfuscation email, des filtres galerie et de la lightbox.
+- Ajout des fichiers christopher-voisin.jpg et christopher-voisin.webp.
