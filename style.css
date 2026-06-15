@@ -837,3 +837,375 @@ footer {
   .hero-stats { grid-template-columns: 1fr; }
   .hero-stats div + div { border-left: 0; border-top: 1px solid rgba(255,193,74,.38); }
 }
+
+/* ==========================================================
+   V4.6.9 - Correctif final galerie / footer / effets
+   Objectif : garder la V4.6.8 stable, rétablir la mise en page
+   premium des réalisations, les filtres, le footer et les effets.
+   ========================================================== */
+
+/* Effets visuels conservés / renforcés */
+.nav-logo,
+.hero-symbol,
+.footer-icon,
+.hero-human-logo {
+  animation: voltaSoftFloat 4s ease-in-out infinite;
+  filter: drop-shadow(0 0 16px rgba(255, 191, 69, .42));
+}
+
+@keyframes voltaSoftFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.card,
+.why-card,
+.review,
+.real-card,
+.before-after-item,
+.featured-realisation,
+.form-block,
+.zone-card,
+.timeline-step {
+  box-shadow: 0 26px 70px rgba(0,0,0,.34), 0 0 0 1px rgba(255,191,69,.05);
+}
+
+.card:hover,
+.why-card:hover,
+.review:hover,
+.real-card:hover,
+.before-after-item:hover,
+.timeline-step:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255,191,69,.48) !important;
+  box-shadow: 0 30px 75px rgba(0,0,0,.42), 0 0 36px rgba(255,145,28,.12);
+}
+
+/* Réalisations : vraie mise en page premium avec filtres visibles */
+.realisations-premium {
+  max-width: none;
+  background:
+    radial-gradient(circle at top right, rgba(255,191,69,.12), transparent 30%),
+    linear-gradient(180deg, #070707, #0c0c0c);
+}
+
+.featured-realisation {
+  max-width: 1120px;
+  margin: 42px auto 48px;
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: 24px;
+  align-items: stretch;
+  padding: 20px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,191,69,.22);
+  background: linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.025)), #101010;
+  text-align: left;
+}
+
+.featured-image {
+  min-height: 0 !important;
+  height: auto !important;
+  aspect-ratio: 16 / 10;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #050505 !important;
+  border: 1px solid rgba(255,191,69,.12);
+  display: grid;
+  place-items: center;
+}
+
+.featured-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #050505 !important;
+}
+
+.featured-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.featured-badge {
+  align-self: flex-start;
+  color: #111;
+  background: linear-gradient(135deg, #ffd45c, #ff8d21);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 900;
+  margin-bottom: 14px;
+}
+
+.featured-text h3,
+.gallery-subtitle,
+.before-after-title {
+  color: #ffc14a;
+}
+
+.featured-text p { color: #ded2c0; }
+
+.featured-points {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 16px;
+}
+
+.featured-points span {
+  padding: 9px 11px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,191,69,.14);
+  color: #eadfce;
+  font-weight: 800;
+  font-size: .9rem;
+}
+
+.before-after-title,
+.gallery-subtitle {
+  max-width: 1120px;
+  margin: 26px auto 18px;
+  text-align: left;
+  font-size: 1.35rem;
+}
+
+.before-after-clean {
+  max-width: 1120px;
+  margin: 0 auto 46px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.before-after-item {
+  display: block;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,191,69,.16);
+  background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.025)), #101010;
+  color: #fff;
+  overflow: hidden;
+}
+
+.before-after-item > span {
+  display: inline-block;
+  color: #111;
+  background: linear-gradient(135deg, #ffd45c, #ff8d21);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.before-after-item img {
+  display: block !important;
+  width: 100% !important;
+  height: 260px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #050505 !important;
+  border-radius: 18px;
+}
+
+.before-after-item p { color: #ded2c0; margin-top: 12px; }
+
+.gallery-filters {
+  max-width: 1120px;
+  margin: 0 auto 24px;
+  display: flex !important;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter-btn {
+  appearance: none;
+  border: 1px solid rgba(255,191,69,.28);
+  background: rgba(255,255,255,.045);
+  color: #fff;
+  border-radius: 999px;
+  padding: 11px 16px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease, background .2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #ffd45c, #ff8d21);
+  color: #111;
+  border-color: rgba(255,191,69,.8);
+  box-shadow: 0 16px 36px rgba(255,145,28,.16);
+}
+
+.real-grid-clean {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.real-card {
+  display: flex !important;
+  flex-direction: column;
+  min-width: 0;
+  text-decoration: none;
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid rgba(255,191,69,.16);
+  background: linear-gradient(180deg, rgba(255,255,255,.065), rgba(255,255,255,.025)), #101010;
+  color: #fff;
+}
+
+.real-img-wrap {
+  position: relative;
+  height: 230px !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #050505 !important;
+}
+
+.real-img-wrap img,
+.real-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #050505 !important;
+}
+
+.real-tag {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 2;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #111;
+  background: linear-gradient(135deg, #ffd45c, #ff8d21);
+  font-weight: 900;
+  font-size: .82rem;
+}
+
+.real-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.real-content h3 {
+  color: #ffc14a;
+  margin-bottom: 8px;
+}
+
+.real-content p { color: #ded2c0; }
+
+.filtered-hidden { display: none !important; }
+
+.gallery-note {
+  max-width: 1120px;
+  margin: 24px auto 0;
+  color: #d9cdbb;
+}
+
+/* Footer premium restauré */
+.footer-premium {
+  background:
+    radial-gradient(circle at top, rgba(255,191,69,.10), transparent 36%),
+    linear-gradient(180deg, #080808, #030303) !important;
+  border-top: 1px solid rgba(255,191,69,.18);
+  padding: 54px 20px 105px !important;
+  text-align: left !important;
+}
+
+.footer-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.35fr .75fr .75fr .9fr;
+  gap: 26px;
+  align-items: start;
+}
+
+.footer-col {
+  padding: 22px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,191,69,.12);
+  background: rgba(255,255,255,.035);
+}
+
+.footer-main {
+  background: linear-gradient(180deg, rgba(255,191,69,.08), rgba(255,255,255,.03));
+}
+
+.footer-col h3,
+.footer-brand {
+  color: #ffc14a;
+  margin-bottom: 12px;
+}
+
+.footer-col a {
+  display: block;
+  color: #eadfce;
+  text-decoration: none;
+  margin: 8px 0;
+}
+
+.footer-col a:hover { color: #ffc14a; }
+
+.footer-col p { color: #cfc1ad; margin: 8px 0; }
+
+.footer-slogan { color: #fff !important; font-weight: 900; }
+
+.footer-bottom {
+  max-width: 1180px;
+  margin: 24px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,191,69,.12);
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  color: #b9aa91;
+}
+
+.footer-bottom a {
+  color: #eadfce;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover { color: #ffc14a; }
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .featured-realisation,
+  .real-grid-clean,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .before-after-clean {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .featured-realisation { padding: 14px; }
+  .featured-image { aspect-ratio: 4 / 3; }
+  .real-grid-clean { gap: 14px; }
+  .real-img-wrap { height: 220px !important; }
+  .before-after-item img { height: 220px !important; }
+  .footer-premium { text-align: center !important; }
+  .footer-bottom { justify-content: center; text-align: center; }
+  .gallery-filters { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 6px; }
+  .filter-btn { flex: 0 0 auto; }
+}
