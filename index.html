@@ -56,6 +56,25 @@
 
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google tag (gtag.js) - Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGPQYC1PJX"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-HGPQYC1PJX', { 'anonymize_ip': true });
+  </script>
+
 </head>
 
 <body>
@@ -993,6 +1012,49 @@ Volta Solutions 71
 
     applyGalleryFilter('all');
   });
+</script>
+
+
+<div id="cookieConsent" class="cookie-consent" hidden>
+  <div>
+    <strong>Mesure d’audience</strong>
+    <p>Volta Solutions 71 utilise Google Analytics uniquement pour mesurer la fréquentation du site. Vous pouvez accepter ou refuser.</p>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" id="cookieReject">Refuser</button>
+    <button type="button" id="cookieAccept">Accepter</button>
+  </div>
+</div>
+
+
+<script>
+  (function () {
+    const consentBox = document.getElementById('cookieConsent');
+    const acceptBtn = document.getElementById('cookieAccept');
+    const rejectBtn = document.getElementById('cookieReject');
+    const savedConsent = localStorage.getItem('voltaAnalyticsConsent');
+
+    function applyConsent(value) {
+      const granted = value === 'granted';
+      gtag('consent', 'update', {
+        'analytics_storage': granted ? 'granted' : 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+      localStorage.setItem('voltaAnalyticsConsent', granted ? 'granted' : 'denied');
+      if (consentBox) consentBox.hidden = true;
+    }
+
+    if (savedConsent === 'granted' || savedConsent === 'denied') {
+      applyConsent(savedConsent);
+    } else if (consentBox) {
+      consentBox.hidden = false;
+    }
+
+    if (acceptBtn) acceptBtn.addEventListener('click', () => applyConsent('granted'));
+    if (rejectBtn) rejectBtn.addEventListener('click', () => applyConsent('denied'));
+  })();
 </script>
 
 </body>

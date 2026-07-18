@@ -19,3 +19,11 @@ VoltaSite V4.7.3 - Correctif confirmation formulaire
 - Conservation de l'envoi classique du formulaire, sans AJAX, car l'auto-réponse ne fonctionne pas avec un envoi AJAX.
 - Message de succès sur le site enrichi après redirection vers ?devis=envoye#devis.
 - Important : si FormSubmit affiche encore sa page de confirmation ou d'activation, vérifier que l'adresse voltasolutions71@mail.fr est bien activée dans FormSubmit en cliquant sur l'email de validation reçu.
+
+
+VoltaSite V4.7.4 - Google Analytics
+- Ajout de la balise Google Analytics 4 G-HGPQYC1PJX sur toutes les pages HTML.
+- Ajout du Consent Mode v2 avec stockage Analytics refusé par défaut.
+- Ajout d’un bandeau Accepter / Refuser.
+- Mise à jour de la politique de confidentialité.
+- Mise à jour de la Content-Security-Policy pour autoriser Google Analytics.

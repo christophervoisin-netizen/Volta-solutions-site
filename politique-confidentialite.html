@@ -7,6 +7,25 @@
   <meta name="description" content="Politique de confidentialité du site Volta Solutions 71." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Google tag (gtag.js) - Consent Mode v2 -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'analytics_storage': 'denied',
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HGPQYC1PJX"></script>
+  <script>
+    gtag('js', new Date());
+    gtag('config', 'G-HGPQYC1PJX', { 'anonymize_ip': true });
+  </script>
+
 </head>
 <body>
 
@@ -47,10 +66,15 @@
       <a href="#" class="js-email-link" data-user="voltasolutions71" data-domain="mail.fr"><span data-email-text="volta-contact">Adresse email</span></a>.
     </p>
 
-    <h2>Cookies</h2>
+    <h2>Mesure d’audience et cookies</h2>
     <p>
-      À ce stade, le site n’utilise pas de cookies publicitaires ni de système de suivi avancé.
-      Si des outils de mesure d’audience sont ajoutés plus tard, cette page sera mise à jour.
+      Le site utilise Google Analytics 4 afin de mesurer sa fréquentation et de mieux comprendre l’utilisation des pages.
+      La mesure d’audience n’est activée qu’après votre accord via le bandeau de consentement. En cas de refus, le stockage
+      Analytics reste désactivé. Aucun cookie publicitaire n’est utilisé par Volta Solutions 71.
+    </p>
+    <p>
+      Votre choix est conservé dans le stockage local de votre navigateur sous la clé <code>voltaAnalyticsConsent</code>.
+      Vous pouvez le modifier en supprimant les données du site dans les paramètres de votre navigateur.
     </p>
   </section>
 </main>
@@ -62,6 +86,49 @@
     const text = link.querySelector('[data-email-text]');
     if (text) text.textContent = email;
   });
+</script>
+
+
+<div id="cookieConsent" class="cookie-consent" hidden>
+  <div>
+    <strong>Mesure d’audience</strong>
+    <p>Volta Solutions 71 utilise Google Analytics uniquement pour mesurer la fréquentation du site. Vous pouvez accepter ou refuser.</p>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" id="cookieReject">Refuser</button>
+    <button type="button" id="cookieAccept">Accepter</button>
+  </div>
+</div>
+
+
+<script>
+  (function () {
+    const consentBox = document.getElementById('cookieConsent');
+    const acceptBtn = document.getElementById('cookieAccept');
+    const rejectBtn = document.getElementById('cookieReject');
+    const savedConsent = localStorage.getItem('voltaAnalyticsConsent');
+
+    function applyConsent(value) {
+      const granted = value === 'granted';
+      gtag('consent', 'update', {
+        'analytics_storage': granted ? 'granted' : 'denied',
+        'ad_storage': 'denied',
+        'ad_user_data': 'denied',
+        'ad_personalization': 'denied'
+      });
+      localStorage.setItem('voltaAnalyticsConsent', granted ? 'granted' : 'denied');
+      if (consentBox) consentBox.hidden = true;
+    }
+
+    if (savedConsent === 'granted' || savedConsent === 'denied') {
+      applyConsent(savedConsent);
+    } else if (consentBox) {
+      consentBox.hidden = false;
+    }
+
+    if (acceptBtn) acceptBtn.addEventListener('click', () => applyConsent('granted'));
+    if (rejectBtn) rejectBtn.addEventListener('click', () => applyConsent('denied'));
+  })();
 </script>
 
 </body>
