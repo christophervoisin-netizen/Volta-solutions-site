@@ -27,3 +27,16 @@ VoltaSite V4.7.4 - Google Analytics
 - Ajout d’un bandeau Accepter / Refuser.
 - Mise à jour de la politique de confidentialité.
 - Mise à jour de la Content-Security-Policy pour autoriser Google Analytics.
+
+
+VoltaSite V5.0 - SEO local et conversion
+- Base stable : V4.7.4 conservée (Analytics, consentement, formulaire, galerie et design premium).
+- Ajout de 6 pages de services avec contenus uniques et liens internes.
+- Ajout d’une FAQ visible et de données structurées FAQPage.
+- Enrichissement des données structurées Electrician, WebSite, Service et BreadcrumbList.
+- Ajout de robots.txt et sitemap.xml.
+- Ajout d’un bloc local Louhans / communes voisines.
+- Remplacement des faux avis anonymes par des engagements vérifiables, en attendant de vrais avis Google.
+- Ajout du suivi Analytics des clics téléphone, email, devis et pages services.
+- Conservation du style noir/orange, des photos, du formulaire FormSubmit et des correctifs précédents.
+- Important : conserver dans le déploiement tous les fichiers images déjà présents sur le site.
