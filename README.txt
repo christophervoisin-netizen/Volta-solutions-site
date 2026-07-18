@@ -40,3 +40,12 @@ VoltaSite V5.0 - SEO local et conversion
 - Ajout du suivi Analytics des clics téléphone, email, devis et pages services.
 - Conservation du style noir/orange, des photos, du formulaire FormSubmit et des correctifs précédents.
 - Important : conserver dans le déploiement tous les fichiers images déjà présents sur le site.
+
+
+VoltaSite V5.1 - Correctifs de finition
+- Suppression du commentaire HTML mal encodé qui apparaissait en haut de la page.
+- Remplacement du titre répétitif de la section Services.
+- Réécriture de l'introduction de la section Services pour mieux la distinguer de Mon engagement.
+- Correction des ancres avec scroll-margin-top / scroll-padding-top.
+- FAQ refermée au chargement et limitée à une seule réponse ouverte à la fois.
+- Renforcement CSS pour empêcher l'affichage d'une réponse lorsque son bloc details est fermé.
