@@ -49,3 +49,16 @@ VoltaSite V5.1 - Correctifs de finition
 - Correction des ancres avec scroll-margin-top / scroll-padding-top.
 - FAQ refermée au chargement et limitée à une seule réponse ouverte à la fois.
 - Renforcement CSS pour empêcher l'affichage d'une réponse lorsque son bloc details est fermé.
+
+
+VoltaSite V5.2 - Mobile Premium
+- Base : V5.1 conservée.
+- Modifications CSS limitées aux écrans de téléphone (max-width 700 px).
+- Aucun changement du rendu ordinateur.
+- Accueil plus compact : points clés condensés, photo et statistiques réduites.
+- Sections Engagement, Services, Méthode, Avis et galerie transformées en carrousels tactiles horizontaux sur mobile.
+- Deuxième grande photo de Christopher masquée uniquement sur téléphone pour éviter le doublon.
+- Espacements, titres, cartes et zone d’intervention réduits uniquement sur mobile.
+- Formulaire de devis rendu plus compact tout en conservant des champs tactiles confortables.
+- Barre d’actions fixe et bouton retour en haut affinés.
+- Pages de services et pages légales également adaptées au téléphone.

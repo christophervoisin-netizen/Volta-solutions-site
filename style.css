@@ -2042,3 +2042,371 @@ header[id] {
   html { scroll-padding-top: 16px; }
   section[id], header[id], .faq-section { scroll-margin-top: 16px; }
 }
+
+/* ==========================================================
+   V5.2 - Mobile Premium
+   Optimisations limitées aux téléphones : le rendu ordinateur
+   et tablette large reste strictement inchangé.
+   ========================================================== */
+@media (max-width: 700px) {
+  html { scroll-padding-top: 8px; }
+  body { padding-bottom: 66px; }
+
+  /* Bandeau et navigation plus discrets */
+  .top-trust-strip {
+    gap: 6px 14px !important;
+    padding: 7px 10px !important;
+    font-size: .68rem !important;
+    line-height: 1.25 !important;
+  }
+  .top-trust-strip span:nth-child(3) { display: none; }
+  .navbar-human { padding: 12px 14px !important; }
+  .brand-human { min-width: 0 !important; }
+  .brand-human strong { font-size: .88rem !important; }
+  .nav-logo { width: 29px !important; height: 29px !important; }
+
+  /* Rythme vertical général : moins de vide, sans tasser le texte */
+  .section {
+    padding: 46px 14px !important;
+  }
+  .section-kicker {
+    margin-bottom: 8px !important;
+    letter-spacing: 2.2px !important;
+    font-size: .66rem !important;
+  }
+  .section h2 {
+    font-size: clamp(1.72rem, 8.7vw, 2.18rem) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 13px !important;
+  }
+  .section-text {
+    margin-bottom: 24px !important;
+    font-size: .94rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Accueil plus court : informations essentielles immédiatement visibles */
+  .hero-human-grid {
+    padding: 28px 15px 22px !important;
+    gap: 22px !important;
+  }
+  .hero-title {
+    font-size: clamp(2.7rem, 14vw, 3.55rem) !important;
+    line-height: .92 !important;
+    letter-spacing: -1.5px !important;
+  }
+  .hero-signature { margin-bottom: 16px !important; font-size: 1.02rem !important; }
+  .hero-intro { margin-bottom: 18px !important; font-size: .96rem !important; }
+  .hero-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    margin-bottom: 17px !important;
+  }
+  .hero-points article {
+    grid-template-columns: 30px 1fr !important;
+    gap: 7px !important;
+    align-items: center !important;
+    padding: 10px !important;
+    border: 1px solid rgba(255,191,69,.13) !important;
+    border-radius: 15px !important;
+    background: rgba(255,255,255,.025) !important;
+  }
+  .hero-points article > span {
+    width: 27px !important;
+    height: 27px !important;
+    font-size: .75rem !important;
+  }
+  .hero-points h3 { font-size: .79rem !important; line-height: 1.18 !important; margin: 0 !important; }
+  .hero-points p { display: none !important; }
+  .hero-handwritten { font-size: 1.02rem !important; margin-bottom: 1px !important; }
+  .hero-name { margin-bottom: 15px !important; font-size: .88rem !important; }
+  .hero-buttons-human { gap: 9px !important; }
+  .hero-buttons-human .btn {
+    padding: 12px 15px !important;
+    font-size: .82rem !important;
+  }
+  .hero-human-visual picture,
+  .hero-human-visual img { width: min(320px, 92vw) !important; }
+  .hero-stats { margin-top: -4px !important; grid-template-columns: repeat(3, 1fr) !important; }
+  .hero-stats div { min-height: 67px !important; padding: 8px 5px !important; }
+  .hero-stats div + div { border-top: 0 !important; border-left: 1px solid rgba(255,193,74,.38) !important; }
+  .hero-stats span { font-size: 1.05rem !important; }
+  .hero-stats strong { font-size: .72rem !important; }
+  .hero-stats small { font-size: .61rem !important; }
+
+  /* Engagement : carrousel tactile au lieu de cinq grandes cartes empilées */
+  .engagement-services {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px !important;
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    margin: 20px -14px 0 !important;
+    padding: 2px 14px 14px !important;
+  }
+  .engagement-services::-webkit-scrollbar { display: none; }
+  .engagement-services .why-card {
+    flex: 0 0 min(76vw, 270px) !important;
+    min-height: 185px !important;
+    padding: 20px 17px !important;
+    scroll-snap-align: center !important;
+  }
+  .engagement-services .why-card span { font-size: 2rem !important; }
+  .engagement-services .why-card h3 { margin: 9px 0 6px !important; }
+  .engagement-promise {
+    margin: 12px auto 22px !important;
+    padding: 13px 15px !important;
+    gap: 7px !important;
+    font-size: .86rem !important;
+  }
+  .engagement-promise em { font-size: 1rem !important; }
+  .engagement-photo-card { display: none !important; }
+  .engagement-human-row {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 9px !important;
+    margin-bottom: 18px !important;
+  }
+  .engagement-value {
+    grid-template-columns: 38px 1fr !important;
+    gap: 11px !important;
+    padding: 14px !important;
+    border-radius: 17px !important;
+  }
+  .engagement-value > span { width: 38px !important; height: 38px !important; font-size: 1rem !important; }
+  .engagement-value h3 { margin-bottom: 3px !important; font-size: 1rem !important; }
+  .engagement-value p { font-size: .84rem !important; line-height: 1.4 !important; }
+  .engagement-cta { padding: 15px !important; gap: 9px !important; border-radius: 18px !important; }
+  .engagement-call-icon { width: 44px !important; height: 44px !important; }
+  .engagement-cta-title { font-size: 1rem !important; }
+  .engagement-cta p { font-size: .86rem !important; }
+  .engagement-signature { font-size: .88rem !important; }
+  .engagement-signature em { font-size: 1.2rem !important; }
+
+  /* Services : véritable carrousel horizontal mobile */
+  #services .cards {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px !important;
+    overflow-x: auto !important;
+    overscroll-behavior-inline: contain !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    margin: 0 -14px !important;
+    padding: 3px 14px 17px !important;
+  }
+  #services .cards::-webkit-scrollbar { display: none; }
+  #services .card {
+    flex: 0 0 min(82vw, 295px) !important;
+    min-height: 218px !important;
+    padding: 20px !important;
+    border-radius: 20px !important;
+    scroll-snap-align: center !important;
+  }
+  #services .card > span { font-size: 1.8rem !important; }
+  #services .card h3 { margin: 10px 0 7px !important; }
+  #services .card p { font-size: .9rem !important; }
+  .card-link { margin-top: 11px !important; font-size: .86rem !important; }
+
+  /* Méthode et engagements en glissement horizontal */
+  .method-section .method-highlights {
+    display: flex !important;
+    overflow-x: auto !important;
+    gap: 8px !important;
+    margin: 20px -14px 20px !important;
+    padding: 0 14px 8px !important;
+    scrollbar-width: none !important;
+  }
+  .method-section .method-highlights::-webkit-scrollbar { display: none; }
+  .method-section .method-highlights div {
+    flex: 0 0 auto !important;
+    padding: 10px 13px !important;
+    font-size: .78rem !important;
+  }
+  .method-section .timeline {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 11px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    margin: 0 -14px !important;
+    padding: 2px 14px 14px !important;
+  }
+  .method-section .timeline::-webkit-scrollbar { display: none; }
+  .method-section .timeline-step {
+    flex: 0 0 min(76vw, 270px) !important;
+    min-height: 175px !important;
+    padding: 18px !important;
+    scroll-snap-align: center !important;
+  }
+
+  /* Zones, référencement local et avis plus compacts */
+  .zone-card { padding: 14px !important; gap: 12px !important; border-radius: 21px !important; }
+  .zone-map { min-height: 190px !important; }
+  .zone-list { gap: 8px !important; }
+  .zone-list div { padding: 11px 12px !important; font-size: .84rem !important; }
+  .local-seo-grid > div { padding: 16px !important; border-radius: 18px !important; }
+  .local-seo-grid p { font-size: .9rem !important; }
+  .local-links a { padding: 11px 12px !important; }
+  .review-grid-premium {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 11px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    margin: 0 -14px !important;
+    padding: 3px 14px 14px !important;
+  }
+  .review-grid-premium::-webkit-scrollbar { display: none; }
+  .review-grid-premium .review {
+    flex: 0 0 min(78vw, 280px) !important;
+    padding: 19px !important;
+    scroll-snap-align: center !important;
+  }
+
+  /* Réalisations : conserver la photo vedette, galerie tactile compacte */
+  .featured-realisation { margin: 25px auto 30px !important; padding: 12px !important; gap: 13px !important; border-radius: 21px !important; }
+  .featured-image { min-height: 210px !important; }
+  .featured-text { padding: 4px !important; }
+  .featured-points { gap: 6px !important; }
+  .featured-points span { padding: 7px 9px !important; font-size: .74rem !important; }
+  .before-after-title, .gallery-subtitle { margin: 22px auto 12px !important; font-size: 1.12rem !important; }
+  .before-after-clean { gap: 11px !important; margin-bottom: 26px !important; }
+  .before-after-item { padding: 10px !important; border-radius: 18px !important; }
+  .before-after-item img { max-height: 205px !important; }
+  .premium-filter-grid,
+  .real-grid-clean {
+    display: flex !important;
+    grid-template-columns: none !important;
+    gap: 12px !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    margin: 0 -14px !important;
+    padding: 2px 14px 16px !important;
+  }
+  .premium-filter-grid::-webkit-scrollbar,
+  .real-grid-clean::-webkit-scrollbar { display: none; }
+  .premium-filter-grid .real-card,
+  .real-grid-clean .real-card {
+    flex: 0 0 min(82vw, 295px) !important;
+    scroll-snap-align: center !important;
+  }
+
+  /* FAQ fermée et lisible, sans grands blocs */
+  .faq-grid { gap: 8px !important; }
+  .faq-item { border-radius: 15px !important; }
+  .faq-item summary {
+    padding: 14px 43px 14px 14px !important;
+    font-size: .9rem !important;
+    line-height: 1.35 !important;
+  }
+  .faq-item summary::after { right: 14px !important; }
+  .faq-item p { padding: 0 14px 14px !important; font-size: .86rem !important; }
+  .faq-cta { margin-top: 18px !important; }
+
+  /* Formulaire : même confort tactile avec nettement moins de hauteur */
+  .devis-smart {
+    margin-bottom: 36px !important;
+    border-radius: 24px !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  .quote-form { gap: 12px !important; }
+  .form-block {
+    padding: 15px !important;
+    border-radius: 19px !important;
+  }
+  .form-block h3 { margin-bottom: 11px !important; font-size: 1.05rem !important; }
+  .project-grid { gap: 7px !important; }
+  .project-grid label {
+    min-height: 44px !important;
+    padding: 10px !important;
+    border-radius: 13px !important;
+    font-size: .82rem !important;
+  }
+  .project-grid input[type="checkbox"] { width: 17px !important; height: 17px !important; }
+  .form-grid { gap: 10px !important; }
+  .form-grid label, .textarea-label, .file-label { gap: 5px !important; font-size: .85rem !important; }
+  .quote-form input[type="text"],
+  .quote-form input[type="tel"],
+  .quote-form input[type="email"],
+  .quote-form textarea,
+  .quote-form input[type="file"] {
+    min-height: 44px !important;
+    padding: 11px 12px !important;
+    border-radius: 13px !important;
+    font-size: .9rem !important;
+  }
+  .quote-form textarea { min-height: 118px !important; }
+  .file-label small, .photo-note { font-size: .72rem !important; line-height: 1.4 !important; }
+  .photo-note { padding: 9px !important; }
+  .quote-submit { width: 100% !important; padding: 13px 14px !important; }
+  .quote-reassurance, .direct-contact p { font-size: .8rem !important; }
+
+  /* Barre fixe mobile plus fine et moins envahissante */
+  .floating-actions {
+    bottom: 7px !important;
+    width: calc(100% - 14px) !important;
+    max-width: 410px !important;
+    gap: 5px !important;
+    padding: 5px !important;
+    border-radius: 17px !important;
+  }
+  .floating-actions a {
+    padding: 8px 4px !important;
+    font-size: .68rem !important;
+  }
+  .back-to-top {
+    right: 10px !important;
+    bottom: 61px !important;
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 1rem !important;
+  }
+
+  /* Pages de services également optimisées sur téléphone */
+  .service-hero { padding: 0 14px !important; }
+  .service-nav { padding: 12px 0 !important; }
+  .service-hero-content { padding: 42px 0 55px !important; }
+  .service-hero-content h1 { font-size: clamp(2rem, 10vw, 2.7rem) !important; }
+  .service-hero-content > p { font-size: .95rem !important; }
+  .service-detail-grid,
+  .service-steps {
+    display: flex !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    gap: 11px !important;
+    scroll-snap-type: x mandatory !important;
+    scrollbar-width: none !important;
+    margin: 0 -14px !important;
+    padding: 2px 14px 14px !important;
+  }
+  .service-detail-grid::-webkit-scrollbar,
+  .service-steps::-webkit-scrollbar { display: none; }
+  .service-detail-card,
+  .service-steps article {
+    flex: 0 0 min(80vw, 285px) !important;
+    scroll-snap-align: center !important;
+  }
+
+  /* Pages légales */
+  .legal-page { padding: 26px 12px 90px !important; }
+  .legal-card { padding: 20px 16px !important; border-radius: 20px !important; }
+}
+
+@media (max-width: 380px) {
+  .hero-points { grid-template-columns: 1fr !important; }
+  .hero-points article:nth-child(n+3) { display: none !important; }
+  .hero-title { font-size: 2.55rem !important; }
+  #services .card,
+  .engagement-services .why-card,
+  .method-section .timeline-step,
+  .review-grid-premium .review,
+  .premium-filter-grid .real-card,
+  .real-grid-clean .real-card { flex-basis: 88vw !important; }
+}
