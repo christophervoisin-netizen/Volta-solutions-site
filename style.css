@@ -2410,3 +2410,154 @@ header[id] {
   .premium-filter-grid .real-card,
   .real-grid-clean .real-card { flex-basis: 88vw !important; }
 }
+
+/* ==========================================================
+   V5.3 - Finitions Mobile : aucun texte coupé
+   Correctifs limités aux téléphones. Le rendu ordinateur reste inchangé.
+   ========================================================== */
+@media (max-width: 700px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .hero-human,
+  .hero-human-grid,
+  .hero-human-text,
+  .hero-human-visual,
+  .hero-points,
+  .hero-points article,
+  .hero-points article > div {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  /* Le nom peut revenir proprement à la ligne sur les petits écrans. */
+  .hero-title {
+    max-width: 100%;
+    font-size: clamp(2.35rem, 11.5vw, 3.05rem) !important;
+    line-height: .96 !important;
+    letter-spacing: -1.1px !important;
+    overflow-wrap: normal;
+    word-break: normal;
+    text-wrap: balance;
+  }
+
+  .hero-intro,
+  .hero-handwritten,
+  .hero-name,
+  .hero-points h3,
+  .hero-points p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Cartes de présentation : texte intégral, sans dépasser. */
+  .hero-points {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .hero-points article {
+    padding: 9px 8px !important;
+  }
+  .hero-points h3 {
+    font-size: clamp(.69rem, 2.55vw, .78rem) !important;
+    line-height: 1.22 !important;
+  }
+
+  /* La photo et les statistiques sont empilées, jamais côte à côte. */
+  .hero-human-visual {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    overflow: hidden !important;
+  }
+  .hero-human-visual picture {
+    flex: 0 0 auto !important;
+    width: min(100%, 390px) !important;
+    max-width: 100% !important;
+  }
+  .hero-human-visual img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .hero-stats {
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    max-width: 390px !important;
+    margin: 10px auto 0 !important;
+    overflow: hidden !important;
+  }
+  .hero-stats div {
+    min-width: 0 !important;
+  }
+  .hero-stats strong,
+  .hero-stats small {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  /* Boutons sans débordement, même sur un téléphone étroit. */
+  .hero-buttons-human {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .95fr) !important;
+    width: 100%;
+  }
+  .hero-buttons-human .btn {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 10px !important;
+    text-align: center;
+    white-space: normal;
+    line-height: 1.25;
+  }
+
+  /* Chaque élément de carrousel garde une largeur maîtrisée. */
+  #services .card,
+  .engagement-services .why-card,
+  .method-section .timeline-step,
+  .review-grid-premium .review,
+  .premium-filter-grid .real-card,
+  .real-grid-clean .real-card,
+  .service-detail-card,
+  .service-steps article {
+    min-width: 0 !important;
+    max-width: calc(100vw - 42px) !important;
+  }
+
+  /* Barre basse légèrement affinée et texte toujours visible. */
+  .floating-actions {
+    min-width: 0 !important;
+  }
+  .floating-actions a {
+    min-width: 0 !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-title {
+    font-size: clamp(2.25rem, 12vw, 2.72rem) !important;
+  }
+  .hero-points {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-points article:nth-child(n+3) {
+    display: grid !important;
+  }
+  .hero-buttons-human {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-stats strong { font-size: .68rem !important; }
+  .hero-stats small { font-size: .57rem !important; }
+}

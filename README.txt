@@ -62,3 +62,12 @@ VoltaSite V5.2 - Mobile Premium
 - Formulaire de devis rendu plus compact tout en conservant des champs tactiles confortables.
 - Barre d’actions fixe et bouton retour en haut affinés.
 - Pages de services et pages légales également adaptées au téléphone.
+
+VoltaSite V5.3 - Finitions Mobile
+- Correctifs limités aux écrans de téléphone ; aucun changement du rendu ordinateur.
+- Suppression des débordements horizontaux pouvant couper le nom, les textes et certaines cartes.
+- Typographie du titre principal rendue fluide avec clamp() et retour à la ligne propre.
+- Cartes de présentation sécurisées avec min-width: 0 et textes adaptatifs.
+- Photo d’accueil et statistiques désormais empilées sur mobile, au lieu de pouvoir se placer côte à côte.
+- Boutons d’accueil et barre flottante sécurisés sur les petits écrans.
+- Conservation des carrousels tactiles, du SEO, d’Analytics, du formulaire et des pages de services.
