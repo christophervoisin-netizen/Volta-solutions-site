@@ -71,3 +71,11 @@ VoltaSite V5.3 - Finitions Mobile
 - Photo d’accueil et statistiques désormais empilées sur mobile, au lieu de pouvoir se placer côte à côte.
 - Boutons d’accueil et barre flottante sécurisés sur les petits écrans.
 - Conservation des carrousels tactiles, du SEO, d’Analytics, du formulaire et des pages de services.
+
+
+VoltaSite V5.4 - Correctif mobile anti-débordement
+- Nom Christopher Voisin séparé proprement sur deux lignes uniquement sur mobile.
+- Largeur de la zone d’accueil forcée à la largeur réelle du téléphone.
+- Suppression du débordement horizontal des textes et des cartes d’accueil.
+- Photo et statistiques forcées l’une sous l’autre.
+- Aucun changement du rendu ordinateur.
