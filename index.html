@@ -61,7 +61,7 @@
         "name": "Christopher Voisin"
       },
       "description": "Artisan électricien basé à Montagny-près-Louhans, spécialisé en électricité générale, dépannage, rénovation, tableaux électriques, domotique, automatismes et solutions énergétiques.",
-      "telephone": "+33620449387",
+      "telephone": "+33631383166",
       "email": "voltasolutions71@mail.fr",
       "priceRange": "€€",
       "address": {
@@ -198,7 +198,7 @@
 </span>
 </a>
 <div aria-label="Navigation principale" class="nav-menu"><a class="active" href="#accueil">Accueil</a><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#faq">FAQ</a><a href="#devis">Contact</a></div>
-<a class="nav-phone" href="tel:0620449387">📞 06 20 44 93 87</a>
+<a class="nav-phone" href="tel:0631383166">📞 06 31 38 31 66</a>
 </nav>
 <div class="hero-human-grid">
 <div class="hero-human-text">
@@ -339,7 +339,7 @@
 <span>Parlons-en !</span>
 </div>
 <p>Je suis disponible pour échanger sur votre projet et vous proposer la meilleure solution.</p>
-<a href="tel:0620449387">06 20 44 93 87</a>
+<a href="tel:0631383166">06 31 38 31 66</a>
 </div>
 <p class="engagement-signature"><em>Merci de votre confiance.</em><br/><span>Christopher Voisin – Volta Solutions 71</span></p>
 </section>
@@ -618,7 +618,7 @@ Je reviendrai vers vous dans les meilleurs délais afin d’échanger sur votre 
 Cordialement,
 Christopher Voisin
 Volta Solutions 71
-06 20 44 93 87"/>
+06 31 38 31 66"/>
 <input name="_replyto" type="hidden" value="email"/>
 <input name="_next" type="hidden" value="https://voltasolutions71.fr/?devis=envoye#devis"/>
 <input autocomplete="off" name="_honey" style="display:none" tabindex="-1" type="text"/>
@@ -685,7 +685,8 @@ Volta Solutions 71
 <div class="direct-contact">
 <p>Besoin d’un contact direct ?</p>
 <div>
-<a class="btn secondary" href="tel:0620449387">📞 Appeler</a>
+<a class="btn secondary" href="tel:0631383166">📞 Appeler</a>
+<a class="btn secondary" href="https://wa.me/33631383166" target="_blank" rel="noopener">💬 WhatsApp</a>
 <a class="btn secondary js-email-link" data-domain="mail.fr" data-user="voltasolutions71" href="#">✉️ Email</a>
 </div>
 </div>
@@ -714,7 +715,8 @@ Volta Solutions 71
 <div class="footer-col">
 <h3>Contact</h3>
 <p>📍 Basé à Montagny-près-Louhans</p>
-<p>📞 <a href="tel:0620449387">06 20 44 93 87</a></p>
+<p>📞 <a href="tel:0631383166">06 31 38 31 66</a></p>
+<p>💬 <a href="https://wa.me/33631383166" target="_blank" rel="noopener">WhatsApp</a></p>
 <p>✉️ <a class="js-email-link" data-domain="mail.fr" data-user="voltasolutions71" href="#"><span data-email-text="volta-contact">Adresse email</span></a></p>
 </div>
 </div>
@@ -735,9 +737,9 @@ Volta Solutions 71
 <div class="lightbox-caption"></div>
 </div>
 <div aria-label="Actions rapides" class="floating-actions">
-<a href="tel:0620449387">📞 Appeler</a>
+<a href="tel:0631383166">📞 Appeler</a>
 <a href="#devis">📝 Devis</a>
-<a class="js-email-link" data-domain="mail.fr" data-user="voltasolutions71" href="#">✉️ Email</a>
+<a href="https://wa.me/33631383166" target="_blank" rel="noopener">💬 WhatsApp</a>
 </div>
 <button aria-label="Retour en haut" class="back-to-top">↑</button>
 <div aria-hidden="true" class="lightning-scroll"><span></span></div>
@@ -1056,6 +1058,7 @@ Volta Solutions 71
     const href = link.getAttribute('href') || '';
     if (href.startsWith('tel:')) gtag('event', 'click_phone', { event_category: 'contact' });
     if (href.startsWith('mailto:')) gtag('event', 'click_email', { event_category: 'contact' });
+    if (href.includes('wa.me/')) gtag('event', 'click_whatsapp', { event_category: 'contact' });
     if (link.classList.contains('js-track-service')) gtag('event', 'view_service', { service_url: href });
     if (href === '#devis') gtag('event', 'click_quote', { event_category: 'contact' });
   });

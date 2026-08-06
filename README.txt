@@ -79,3 +79,11 @@ VoltaSite V5.4 - Correctif mobile anti-débordement
 - Suppression du débordement horizontal des textes et des cartes d’accueil.
 - Photo et statistiques forcées l’une sous l’autre.
 - Aucun changement du rendu ordinateur.
+
+
+VoltaSite V5.5 - Numéro professionnel et WhatsApp
+- Remplacement complet de l’ancien numéro par le 06 31 38 31 66.
+- Mise à jour de tous les liens téléphoniques cliquables et des données structurées.
+- Ajout de liens WhatsApp Business vers le nouveau numéro sur la page d’accueil et les pages de services.
+- Ajout du suivi Analytics des clics WhatsApp.
+- Conservation du design, du formulaire, du SEO et de tous les correctifs précédents.
