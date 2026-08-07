@@ -17,3 +17,5 @@ Après déploiement, vérifier :
 4) Mentions légales,
 5) formulaire de devis,
 6) pages services.
+
+NOUVEAU V5.7 : copier également site-update-v57.css. Aucun document d’assurance PDF n’est publié sur le site.

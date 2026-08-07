@@ -105,3 +105,14 @@ AUDIT - INFORMATIONS ENCORE À CONFIRMER / AJOUTER
 3. Étendue territoriale exacte de la garantie décennale : le site indique volontairement “selon conditions contractuelles” tant que l'attestation complète n'est pas fournie.
 4. Textes individuels des avis Google : non recopiés car seuls la note globale et le nombre d'avis ont pu être vérifiés.
 5. Déploiement : ce ZIP est un PACK DE MISE À JOUR. Conserver les photos existantes et le fichier style.css déjà présents sur le site. Le nouveau fichier site-update-v56.css vient en complément.
+
+
+VoltaSite V5.7 - Assurance Allianz définitive & conformité photovoltaïque
+- Intégration des informations exactes de l'attestation Allianz du 07/08/2026.
+- Contrat Allianz Solution BTP n°64907248, souscrit le 06/08/2026.
+- Période de validité affichée : 06/08/2026 au 31/12/2026.
+- Activité assurée : Electricité 2710.
+- Mention précise du périmètre photovoltaïque : raccordements électriques couverts ; pose des panneaux, intervention cellules et réalisation d'installations de production d'électricité exclues.
+- Les mentions d’assurance sont affichées sur le site sans publier l’attestation PDF.
+- Avis Google conservés : 5,0/5, 6 avis vérifiés le 07/08/2026, boutons Voir / Laisser un avis.
+- Logo Volta Solutions 71 noir/or conservé comme logo principal, favicon et partage social.
