@@ -87,3 +87,21 @@ VoltaSite V5.5 - Numéro professionnel et WhatsApp
 - Ajout de liens WhatsApp Business vers le nouveau numéro sur la page d’accueil et les pages de services.
 - Ajout du suivi Analytics des clics WhatsApp.
 - Conservation du design, du formulaire, du SEO et de tous les correctifs précédents.
+
+
+VoltaSite V5.6 - Logo officiel, décennale, avis Google et audit légal
+- Nouveau logo noir/or intégré au site, favicon, icônes et image de partage Open Graph.
+- Ajout assurance de responsabilité décennale : Allianz IARD n°64907248.
+- Mentions légales mises à jour : EURL, SIRET 107 654 378 00010, TVA FR94107654378, APE 4321A.
+- Section Google : note 5,0/5 et 6 avis constatés le 07/08/2026, lien vers la fiche et bouton direct “Laisser un avis”.
+- Aucun faux témoignage recopié : les avis restent vérifiables directement sur Google.
+- Création des 2 pages manquantes référencées dans l'accueil : tableaux/rénovation et solutions énergétiques.
+- sitemap.xml créé/mis à jour.
+- Photovoltaïque reformulé avec prudence : prestations selon étude, réglementation et périmètre assuré.
+
+AUDIT - INFORMATIONS ENCORE À CONFIRMER / AJOUTER
+1. Capital social exact de l'EURL et mention RCS + ville du greffe : non ajoutés faute de document officiel vérifié dans ce lot.
+2. Médiateur de la consommation : pour une clientèle de particuliers, les coordonnées du médiateur choisi doivent être communiquées sur le site/CGV. Ne pas inventer un médiateur : ajouter celui auquel Volta Solutions 71 adhère réellement.
+3. Étendue territoriale exacte de la garantie décennale : le site indique volontairement “selon conditions contractuelles” tant que l'attestation complète n'est pas fournie.
+4. Textes individuels des avis Google : non recopiés car seuls la note globale et le nombre d'avis ont pu être vérifiés.
+5. Déploiement : ce ZIP est un PACK DE MISE À JOUR. Conserver les photos existantes et le fichier style.css déjà présents sur le site. Le nouveau fichier site-update-v56.css vient en complément.

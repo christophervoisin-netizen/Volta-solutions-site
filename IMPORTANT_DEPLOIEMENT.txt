@@ -1,0 +1,19 @@
+IMPORTANT — MISE À JOUR DU SITE
+
+Ce paquet contient les fichiers modifiés/nouveaux.
+Il faut les copier dans le projet actuel SANS supprimer les photos existantes ni le style.css existant.
+
+Fichiers à conserver depuis le site actuel :
+- style.css
+- christopher-voisin-pro.jpg / .webp
+- christopher-voisin-engagement.jpg / .webp
+- toutes les photos realisation-*.jpg
+
+Fichiers de ce paquet : à remplacer/ajouter.
+Après déploiement, vérifier :
+1) logo en haut et en bas,
+2) section Assurance,
+3) section Avis Google,
+4) Mentions légales,
+5) formulaire de devis,
+6) pages services.
