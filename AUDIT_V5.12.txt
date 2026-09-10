@@ -1,0 +1,77 @@
+AUDIT AUTOMATISÉ V5.12 — CONTRÔLE FINAL
+
+borne-recharge-louhans.html
+  H1: 1
+  IDs dupliqués: aucun
+  Erreurs JSON-LD: aucune
+  Liens publics .html: aucun
+  'Appeler Christopher': non
+  Navigation rapide service: OK
+  Présélection devis cohérente: OK
+
+depannage-electrique-louhans.html
+  H1: 1
+  IDs dupliqués: aucun
+  Erreurs JSON-LD: aucune
+  Liens publics .html: aucun
+  'Appeler Christopher': non
+  Navigation rapide service: OK
+  Présélection devis cohérente: OK
+
+domotique-automatisme-louhans.html
+  H1: 1
+  IDs dupliqués: aucun
+  Erreurs JSON-LD: aucune
+  Liens publics .html: aucun
+  'Appeler Christopher': non
+  Navigation rapide service: OK
+  Présélection devis cohérente: OK
+
+electricite-generale-louhans.html
+  H1: 1
+  IDs dupliqués: aucun
+  Erreurs JSON-LD: aucune
+  Liens publics .html: aucun
+  'Appeler Christopher': non
+  Navigation rapide service: OK
+  Présélection devis cohérente: OK
+
+index.html
+  H1: 1
+  IDs dupliqués: aucun
+  Erreurs JSON-LD: aucune
+  Liens publics .html: aucun
+  'Appeler Christopher': non
+
+mentions-legales.html
+  H1: 1
+  IDs dupliqués: aucun
+  Erreurs JSON-LD: aucune
+  Liens publics .html: aucun
+  'Appeler Christopher': non
+
+politique-confidentialite.html
+  H1: 1
+  IDs dupliqués: aucun
+  Erreurs JSON-LD: aucune
+  Liens publics .html: aucun
+  'Appeler Christopher': non
+
+solutions-energetiques-louhans.html
+  H1: 1
+  IDs dupliqués: aucun
+  Erreurs JSON-LD: aucune
+  Liens publics .html: aucun
+  'Appeler Christopher': non
+  Navigation rapide service: OK
+  Présélection devis cohérente: OK
+
+tableau-renovation-electrique-louhans.html
+  H1: 1
+  IDs dupliqués: aucun
+  Erreurs JSON-LD: aucune
+  Liens publics .html: aucun
+  'Appeler Christopher': non
+  Navigation rapide service: OK
+  Présélection devis cohérente: OK
+

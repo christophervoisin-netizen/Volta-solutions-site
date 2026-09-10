@@ -105,12 +105,12 @@
       }
     }
   ]
-}</script><link href="site-update-v57.css" rel="stylesheet"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/></head>
+}</script><link href="site-update-v57.css" rel="stylesheet"/><link href="site-update-v512.css" rel="stylesheet"/><link href="apple-touch-icon.png" rel="apple-touch-icon"/></head>
 <body><div aria-label="Informations utiles" class="top-trust-strip"><span>⚡ Dépannage &amp; devis</span><span>📍 Louhans et environ 50 km</span><span>⭐ 5,0/5 • 10 avis Google</span><span>🛡️ Décennale Allianz IARD</span></div>
 <header class="hero hero-human" id="accueil">
 <nav class="navbar navbar-human">
 <a aria-label="Accueil Volta Solutions 71" class="brand-link brand-human" href="#accueil">
-<img alt="" class="nav-logo" src="logo-volta-solutions-71.png"/>
+<img alt="" class="nav-logo" src="logo-volta-solutions-71-symbol.png"/>
 <span>
 <strong>Volta Solutions 71</strong>
 <small>Électricité générale &amp; solutions énergétiques</small>
@@ -119,7 +119,7 @@
 <div aria-label="Navigation principale" class="nav-menu"><a class="active" href="#accueil">Accueil</a><a href="#services">Services</a><a href="#realisations">Réalisations</a><a href="#faq">FAQ</a><a href="#devis">Contact</a></div>
 <a class="nav-phone" href="tel:0631383166">📞 06 31 38 31 66</a>
 </nav>
-<div class="hero-human-grid">
+<div class="hero-human-grid" id="a-propos">
 <div class="hero-human-text">
 <p class="hero-kicker">Artisan électricien local • Montagny-près-Louhans</p>
 <h1 class="hero-title"><span>Électricien à Louhans</span> <span>et alentours</span></h1>
@@ -608,7 +608,7 @@ Volta Solutions 71
 <footer class="footer-premium">
 <div class="footer-grid">
 <div class="footer-col footer-main">
-<img alt="" class="footer-icon" src="logo-volta-solutions-71.png"/>
+<img alt="" class="footer-icon" src="logo-volta-solutions-71-symbol.png"/>
 <div class="footer-brand">Volta Solutions 71</div>
 <p class="footer-slogan">L’énergie maîtrisée, le confort assuré.</p>
 <p>
@@ -977,5 +977,30 @@ Volta Solutions 71
     if (link.classList.contains('js-track-service')) gtag('event', 'view_service', { service_url: href });
     if (href === '#devis') gtag('event', 'click_quote', { event_category: 'contact' });
   });
-</script></body>
+</script>
+<script>
+  // V5.12 — conserve le formulaire unique tout en mémorisant le service d'origine.
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const project = params.get('projet');
+    if (!project) return;
+
+    const mapping = {
+      depannage: 'Dépannage électrique',
+      electricite: 'Rénovation électrique',
+      tableau: 'Tableau électrique',
+      borne: 'Borne de recharge',
+      domotique: 'Domotique / automatisme',
+      energie: 'Raccordement photovoltaïque / stockage'
+    };
+
+    const expectedValue = mapping[project];
+    if (!expectedValue) return;
+
+    document.querySelectorAll('input[name="projet"]').forEach((input) => {
+      if (input.value === expectedValue) input.checked = true;
+    });
+  })();
+</script>
+</body>
 </html>
