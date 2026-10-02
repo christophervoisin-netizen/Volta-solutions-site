@@ -46,22 +46,22 @@
       et au suivi éventuel du projet.
     </p>
 <h2>Partage des données</h2>
-<p>Les données ne sont ni vendues ni louées. Elles peuvent être traitées par les prestataires techniques strictement nécessaires au fonctionnement du site, notamment FormSubmit pour le formulaire et Google Analytics après consentement pour la mesure d’audience.</p>
+<p>Les données ne sont ni vendues ni louées. Elles peuvent être traitées par les prestataires techniques strictement nécessaires au fonctionnement du site, notamment FormSubmit pour le formulaire, ainsi que Google Analytics et Google Ads après consentement pour la mesure d’audience et des performances publicitaires.</p>
 <h2>Droits des utilisateurs</h2>
 <p>
       Conformément à la réglementation applicable, vous pouvez demander l’accès,
       la rectification ou la suppression de vos données en contactant :
       <a class="js-email-link" data-domain="mail.fr" data-user="voltasolutions71" href="#"><span data-email-text="volta-contact">Adresse email</span></a>.
     </p>
-<h2>Mesure d’audience et cookies</h2>
+<h2>Mesure d’audience, publicitaire et cookies</h2>
 <p>
-      Le site utilise Google Analytics 4 afin de mesurer sa fréquentation et de mieux comprendre l’utilisation des pages et des boutons de contact (par exemple appel, WhatsApp ou demande de devis).
-      La mesure d’audience n’est activée qu’après votre accord via le bandeau de consentement. En cas de refus, le stockage
-      Analytics reste désactivé. Aucun cookie publicitaire n’est utilisé par Volta Solutions 71.
+      Le site utilise Google Analytics 4 et les fonctions de mesure Google Ads afin de mesurer sa fréquentation, de mieux comprendre l’utilisation des pages et des boutons de contact (par exemple appel, WhatsApp ou demande de devis) et d’évaluer les performances des campagnes publicitaires.
+      Ces fonctions ne sont activées avec stockage qu’après votre accord via le bandeau de consentement. En cas de refus, les stockages Analytics et publicitaires restent désactivés. La personnalisation publicitaire et le remarketing restent désactivés sur ce site.
     </p>
 <p>
-      Votre choix est conservé dans le stockage local de votre navigateur sous la clé <code>voltaAnalyticsConsent</code>.
-      Vous pouvez le modifier en supprimant les données du site dans les paramètres de votre navigateur.
+      Votre choix actuel est conservé dans le stockage local de votre navigateur sous la clé <code>voltaGoogleConsentV2</code>.
+      L’ancienne clé <code>voltaAnalyticsConsent</code> peut subsister pour compatibilité avec la précédente version de la bannière.
+      Vous pouvez modifier votre choix en supprimant les données du site dans les paramètres de votre navigateur.
     </p>
 </section>
 </main>
@@ -75,8 +75,8 @@
 </script>
 <div class="cookie-consent" hidden="" id="cookieConsent">
 <div>
-<strong>Mesure d’audience</strong>
-<p>Volta Solutions 71 utilise Google Analytics uniquement pour mesurer la fréquentation du site. Vous pouvez accepter ou refuser.</p>
+<strong>Mesure d’audience et publicitaire</strong>
+<p>Volta Solutions 71 utilise Google Analytics et Google Ads pour mesurer la fréquentation du site et les performances des campagnes. La publicité personnalisée et le remarketing ne sont pas activés. Vous pouvez accepter ou refuser.</p>
 </div>
 <div class="cookie-actions">
 <button id="cookieReject" type="button">Refuser</button>
@@ -88,23 +88,30 @@
     const consentBox = document.getElementById('cookieConsent');
     const acceptBtn = document.getElementById('cookieAccept');
     const rejectBtn = document.getElementById('cookieReject');
-    const savedConsent = localStorage.getItem('voltaAnalyticsConsent');
+    const consentKey = 'voltaGoogleConsentV2';
+    const savedConsent = localStorage.getItem(consentKey);
+    const legacyConsent = localStorage.getItem('voltaAnalyticsConsent');
 
     function applyConsent(value) {
       const granted = value === 'granted';
       gtag('consent', 'update', {
         'analytics_storage': granted ? 'granted' : 'denied',
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
+        'ad_storage': granted ? 'granted' : 'denied',
+        'ad_user_data': granted ? 'granted' : 'denied',
         'ad_personalization': 'denied'
       });
-      localStorage.setItem('voltaAnalyticsConsent', granted ? 'granted' : 'denied');
+      localStorage.setItem(consentKey, granted ? 'granted' : 'denied');
       if (consentBox) consentBox.hidden = true;
     }
 
     if (savedConsent === 'granted' || savedConsent === 'denied') {
       applyConsent(savedConsent);
+    } else if (legacyConsent === 'denied') {
+      // Respecte un refus déjà exprimé avec l’ancienne bannière.
+      applyConsent('denied');
     } else if (consentBox) {
+      // Un ancien accord ne couvrait que Analytics : on redemande l’accord
+      // avant d’activer la mesure publicitaire Google Ads.
       consentBox.hidden = false;
     }
 

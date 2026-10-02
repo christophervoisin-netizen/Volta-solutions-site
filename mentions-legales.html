@@ -43,7 +43,7 @@
 <h2>Hébergement</h2><p>Le site est hébergé par Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis.</p>
 <h2>Propriété intellectuelle</h2><p>Les textes, photographies, logo, éléments graphiques et contenus présents sur ce site sont protégés. Toute reproduction ou utilisation non autorisée est interdite.</p>
 <h2>Responsabilité</h2><p>Les informations du site sont fournies à titre informatif et peuvent évoluer. Les prestations effectivement réalisables dépendent notamment de l’étude technique, de la réglementation applicable et du périmètre des garanties professionnelles souscrites.</p>
-<h2>Données personnelles</h2><p>Pour les informations relatives aux données personnelles, aux cookies et à Google Analytics, consultez la <a href="politique-confidentialite">politique de confidentialité</a>.</p></section>
+<h2>Données personnelles</h2><p>Pour les informations relatives aux données personnelles, aux cookies, à Google Analytics et à Google Ads, consultez la <a href="politique-confidentialite">politique de confidentialité</a>.</p></section>
 </main>
 <script>
   document.querySelectorAll('.js-email-link').forEach((link) => {
@@ -55,8 +55,8 @@
 </script>
 <div class="cookie-consent" hidden="" id="cookieConsent">
 <div>
-<strong>Mesure d’audience</strong>
-<p>Volta Solutions 71 utilise Google Analytics uniquement pour mesurer la fréquentation du site. Vous pouvez accepter ou refuser.</p>
+<strong>Mesure d’audience et publicitaire</strong>
+<p>Volta Solutions 71 utilise Google Analytics et Google Ads pour mesurer la fréquentation du site et les performances des campagnes. La publicité personnalisée et le remarketing ne sont pas activés. Vous pouvez accepter ou refuser.</p>
 </div>
 <div class="cookie-actions">
 <button id="cookieReject" type="button">Refuser</button>
@@ -68,23 +68,30 @@
     const consentBox = document.getElementById('cookieConsent');
     const acceptBtn = document.getElementById('cookieAccept');
     const rejectBtn = document.getElementById('cookieReject');
-    const savedConsent = localStorage.getItem('voltaAnalyticsConsent');
+    const consentKey = 'voltaGoogleConsentV2';
+    const savedConsent = localStorage.getItem(consentKey);
+    const legacyConsent = localStorage.getItem('voltaAnalyticsConsent');
 
     function applyConsent(value) {
       const granted = value === 'granted';
       gtag('consent', 'update', {
         'analytics_storage': granted ? 'granted' : 'denied',
-        'ad_storage': 'denied',
-        'ad_user_data': 'denied',
+        'ad_storage': granted ? 'granted' : 'denied',
+        'ad_user_data': granted ? 'granted' : 'denied',
         'ad_personalization': 'denied'
       });
-      localStorage.setItem('voltaAnalyticsConsent', granted ? 'granted' : 'denied');
+      localStorage.setItem(consentKey, granted ? 'granted' : 'denied');
       if (consentBox) consentBox.hidden = true;
     }
 
     if (savedConsent === 'granted' || savedConsent === 'denied') {
       applyConsent(savedConsent);
+    } else if (legacyConsent === 'denied') {
+      // Respecte un refus déjà exprimé avec l’ancienne bannière.
+      applyConsent('denied');
     } else if (consentBox) {
+      // Un ancien accord ne couvrait que Analytics : on redemande l’accord
+      // avant d’activer la mesure publicitaire Google Ads.
       consentBox.hidden = false;
     }
 

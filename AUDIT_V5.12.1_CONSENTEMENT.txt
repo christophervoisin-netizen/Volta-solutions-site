@@ -1,0 +1,56 @@
+AUDIT V5.12.1 — CONSENT MODE V2 / GOOGLE ADS
+Date : 02/10/2026
+
+Périmètre contrôlé : 9 pages HTML + _headers
+
+Résultat général : OK
+
+CONSENT MODE V2
+- État par défaut avant choix utilisateur :
+  analytics_storage = denied
+  ad_storage = denied
+  ad_user_data = denied
+  ad_personalization = denied
+- Après « Accepter » :
+  analytics_storage = granted
+  ad_storage = granted
+  ad_user_data = granted
+  ad_personalization = denied (volontaire : pas de personnalisation / remarketing)
+- Après « Refuser » : les 4 signaux restent denied.
+- Nouvelle clé de choix : voltaGoogleConsentV2.
+- Ancien refus Analytics respecté automatiquement.
+- Ancien accord Analytics non étendu automatiquement à Google Ads : nouvelle demande de consentement affichée.
+
+TEXTES
+- Bannière mise à jour sur les 9 pages HTML.
+- Politique de confidentialité mise à jour pour Google Analytics + mesure Google Ads.
+- Mentions légales mises à jour.
+
+CONTENT-SECURITY-POLICY
+- Domaines Google Analytics / Google Ads nécessaires ajoutés dans _headers.
+- Présence vérifiée de :
+  www.googletagmanager.com
+  *.google-analytics.com
+  www.googleadservices.com
+  googleads.g.doubleclick.net
+  pagead2.googlesyndication.com
+  ad.doubleclick.net
+
+CONTRÔLES HTML
+- 9/9 pages : 1 seul H1.
+- 9/9 pages : aucun ID dupliqué.
+- JSON-LD : aucune erreur de parsing détectée.
+- 9/9 pages : bannière actualisée présente.
+- 9/9 pages : signaux Consent Mode v2 présents et cohérents.
+
+TEST À FAIRE APRÈS DÉPLOIEMENT
+1. Ouvrir le site en navigation privée.
+2. Lancer Tag Assistant.
+3. Avant clic sur la bannière : vérifier 4 x « Refusé ».
+4. Cliquer « Accepter ».
+5. Vérifier :
+   analytics_storage = Accordé
+   ad_storage = Accordé
+   ad_user_data = Accordé
+   ad_personalization = Refusé (normal et volontaire)
+6. Attendre la mise à jour du diagnostic Google Tag / Google Ads : elle peut ne pas être instantanée.
